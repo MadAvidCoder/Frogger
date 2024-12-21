@@ -1,7 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://0olp874htmvd"]
+[gd_scene load_steps=38 format=3 uid="uid://0olp874htmvd"]
 
-[ext_resource type="PackedScene" uid="uid://bundsotadavd1" path="res://grass.tscn" id="1_g8kun"]
 [ext_resource type="Texture2D" uid="uid://ca2o57e5pe46s" path="res://assets/sprites/frog/forward/jump_0.png" id="1_g63w2"]
+[ext_resource type="Script" path="res://main.gd" id="1_j8g8f"]
 [ext_resource type="Texture2D" uid="uid://cwyxhp2i25p57" path="res://assets/sprites/frog/back/jump-0.png" id="1_wij86"]
 [ext_resource type="Texture2D" uid="uid://bxxrvyq1po2g7" path="res://assets/sprites/frog/back/jump-1.png" id="2_ayejr"]
 [ext_resource type="Texture2D" uid="uid://cdjs8vcpdcub3" path="res://assets/sprites/frog/forward/jump_1.png" id="2_x32w5"]
@@ -30,14 +30,12 @@
 [ext_resource type="Texture2D" uid="uid://cld84txq14pm2" path="res://assets/sprites/frog/right/jump_1.png" id="23_3gey7"]
 [ext_resource type="Texture2D" uid="uid://dhy8r2hhj5kw3" path="res://assets/sprites/frog/right/jump_2.png" id="24_sh3jl"]
 [ext_resource type="Script" path="res://frog.gd" id="30_cct47"]
-[ext_resource type="Texture2D" uid="uid://cpnbrqxuu7b44" path="res://assets/backgrounds/water/frame_0.png" id="31_uhy25"]
-[ext_resource type="Texture2D" uid="uid://22t2tmys65ah" path="res://assets/backgrounds/water/frame_1.png" id="32_2cmrl"]
-[ext_resource type="Texture2D" uid="uid://fd03tydfnir6" path="res://assets/backgrounds/water/frame_2.png" id="33_3xqjv"]
-[ext_resource type="Texture2D" uid="uid://d3ehcxsekssl3" path="res://assets/backgrounds/water/frame_3.png" id="34_71uvk"]
-[ext_resource type="Texture2D" uid="uid://on6xitqb8s7j" path="res://assets/backgrounds/water/frame_4.png" id="35_o64i6"]
-[ext_resource type="Texture2D" uid="uid://rk1hc7gd544h" path="res://assets/backgrounds/water/frame_5.png" id="36_0r432"]
-[ext_resource type="Texture2D" uid="uid://cm6dhutmxp86p" path="res://assets/backgrounds/water/frame_6.png" id="37_s5tyq"]
-[ext_resource type="Texture2D" uid="uid://dx1ksoegl5gb4" path="res://assets/backgrounds/water/frame_7.png" id="38_a1eeu"]
+[ext_resource type="PackedScene" uid="uid://c1c13cbjn3rbb" path="res://river.tscn" id="31_q3esx"]
+[ext_resource type="PackedScene" uid="uid://bundsotadavd1" path="res://grass.tscn" id="32_pa55l"]
+[ext_resource type="Texture2D" uid="uid://dwggivotq7ksc" path="res://assets/backgrounds/road/bottom-lane.png" id="33_4kwc3"]
+[ext_resource type="Texture2D" uid="uid://dh6or1m4ls7q7" path="res://assets/backgrounds/road/top-lane.png" id="34_vvhe3"]
+[ext_resource type="PackedScene" uid="uid://cuahjqb1gmvla" path="res://short_log.tscn" id="35_abh5u"]
+[ext_resource type="PackedScene" uid="uid://ds011byk6cl46" path="res://long_log.tscn" id="36_w8tfp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a28tb"]
 animations = [{
@@ -56,7 +54,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"back_jump",
-"speed": 5.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -110,7 +108,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"forward_jump",
-"speed": 5.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,7 +130,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"left_jump",
-"speed": 5.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -175,7 +173,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"right_jump",
-"speed": 5.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -207,61 +205,86 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_17w7t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("32_2cmrl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_uhy25")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_3xqjv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_71uvk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_o64i6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_0r432")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_s5tyq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_a1eeu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
-}]
-
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_j8g8f")
+
+[node name="Left" type="ColorRect" parent="."]
+z_index = 2
+offset_right = 326.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Right" type="ColorRect" parent="."]
+z_index = 2
+offset_left = 826.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
 offset_left = 326.0
 offset_right = 826.0
 offset_bottom = 648.0
 
-[node name="Grass" parent="." instance=ExtResource("1_g8kun")]
-position = Vector2(576, 566.75)
-
 [node name="Frog" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 595)
+z_index = 1
+position = Vector2(576, 577)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_a28tb")
 animation = &"forward_stationary"
 autoplay = "forward_stationary"
 script = ExtResource("30_cct47")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 397)
-scale = Vector2(0.05, 0.05)
-sprite_frames = SubResource("SpriteFrames_17w7t")
-autoplay = "default"
-frame_progress = 0.426797
+[node name="River" parent="." instance=ExtResource("31_q3esx")]
+position = Vector2(576, 396.7)
+
+[node name="Grass" parent="." instance=ExtResource("32_pa55l")]
+position = Vector2(576, 566.75)
+
+[node name="Grass2" parent="." instance=ExtResource("32_pa55l")]
+position = Vector2(576, 268.275)
+region_rect = Rect2(0, 0, 4000, 650)
+
+[node name="Bottom-lane" type="Sprite2D" parent="."]
+position = Vector2(574, 184)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("33_4kwc3")
+
+[node name="Top-lane" type="Sprite2D" parent="."]
+position = Vector2(579, 102)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("34_vvhe3")
+
+[node name="Grass3" parent="." instance=ExtResource("32_pa55l")]
+position = Vector2(576, 23.275)
+region_rect = Rect2(0, 0, 4000, 650)
+
+[node name="Short" parent="." instance=ExtResource("35_abh5u")]
+position = Vector2(383, 449)
+
+[node name="Long" parent="." instance=ExtResource("36_w8tfp")]
+position = Vector2(567, 449)
+
+[node name="Short2" parent="." instance=ExtResource("35_abh5u")]
+position = Vector2(764, 449)
+
+[node name="Long2" parent="." instance=ExtResource("36_w8tfp")]
+position = Vector2(427, 389)
+
+[node name="Short3" parent="." instance=ExtResource("35_abh5u")]
+position = Vector2(605, 389)
+
+[node name="Long3" parent="." instance=ExtResource("36_w8tfp")]
+position = Vector2(750, 389)
+
+[node name="Long4" parent="." instance=ExtResource("36_w8tfp")]
+position = Vector2(523, 335)
+
+[node name="Short4" parent="." instance=ExtResource("35_abh5u")]
+position = Vector2(381, 336)
+
+[node name="Long5" parent="." instance=ExtResource("36_w8tfp")]
+position = Vector2(715, 335)
 
 [connection signal="animation_finished" from="Frog" to="Frog" method="_on_animation_finished"]

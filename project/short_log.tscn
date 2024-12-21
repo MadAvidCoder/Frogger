@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuahjqb1gmvla"]
+
+[ext_resource type="Texture2D" uid="uid://boyvr7suylaw0" path="res://assets/sprites/log/short.png" id="1_stesr"]
+
+[node name="Short" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_stesr")

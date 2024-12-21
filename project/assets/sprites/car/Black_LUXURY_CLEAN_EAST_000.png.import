@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duc3oinmxbjyj"
-path="res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"
+uid="uid://cx48nd4owxfma"
+path="res://.godot/imported/Black_LUXURY_CLEAN_EAST_000.png-0792013da82ab48c5ae3fbd0f36390c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/log/long.png"
-dest_files=["res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"]
+source_file="res://assets/sprites/car/Black_LUXURY_CLEAN_EAST_000.png"
+dest_files=["res://.godot/imported/Black_LUXURY_CLEAN_EAST_000.png-0792013da82ab48c5ae3fbd0f36390c2.ctex"]
 
 [params]
 

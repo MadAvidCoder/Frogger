@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duc3oinmxbjyj"
-path="res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"
+uid="uid://dkm6pt880oj1v"
+path="res://.godot/imported/Yellow_BUS_CLEAN_EAST_000.png-c4f6d4368e9886057e63cc9b60238e13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/log/long.png"
-dest_files=["res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"]
+source_file="res://assets/sprites/car/Yellow_BUS_CLEAN_EAST_000.png"
+dest_files=["res://.godot/imported/Yellow_BUS_CLEAN_EAST_000.png-c4f6d4368e9886057e63cc9b60238e13.ctex"]
 
 [params]
 

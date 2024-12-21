@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duc3oinmxbjyj"
-path="res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"
+uid="uid://dmb5wlo0c2lxj"
+path="res://.godot/imported/Brown_HatchBack_CLEAN_EAST_000.png-bfe19c7ebc8897341fdcb1be46435f2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/log/long.png"
-dest_files=["res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"]
+source_file="res://assets/sprites/car/Brown_HatchBack_CLEAN_EAST_000.png"
+dest_files=["res://.godot/imported/Brown_HatchBack_CLEAN_EAST_000.png-bfe19c7ebc8897341fdcb1be46435f2f.ctex"]
 
 [params]
 

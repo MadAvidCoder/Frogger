@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duc3oinmxbjyj"
-path="res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"
+uid="uid://c1pucarngbatf"
+path="res://.godot/imported/LIMO_CLEAN_EAST_000.png-f02e4c77b63bb8a4d165323683a9a5a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/log/long.png"
-dest_files=["res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"]
+source_file="res://assets/sprites/car/LIMO_CLEAN_EAST_000.png"
+dest_files=["res://.godot/imported/LIMO_CLEAN_EAST_000.png-f02e4c77b63bb8a4d165323683a9a5a6.ctex"]
 
 [params]
 

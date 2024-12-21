@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1c13cbjn3rbb"]
+
+[ext_resource type="Texture2D" uid="uid://22t2tmys65ah" path="res://assets/backgrounds/water/frame_1.png" id="1_sdefs"]
+[ext_resource type="Texture2D" uid="uid://cpnbrqxuu7b44" path="res://assets/backgrounds/water/frame_0.png" id="2_eoue1"]
+[ext_resource type="Texture2D" uid="uid://fd03tydfnir6" path="res://assets/backgrounds/water/frame_2.png" id="3_urm55"]
+[ext_resource type="Texture2D" uid="uid://d3ehcxsekssl3" path="res://assets/backgrounds/water/frame_3.png" id="4_e8mow"]
+[ext_resource type="Texture2D" uid="uid://on6xitqb8s7j" path="res://assets/backgrounds/water/frame_4.png" id="5_aecnd"]
+[ext_resource type="Texture2D" uid="uid://rk1hc7gd544h" path="res://assets/backgrounds/water/frame_5.png" id="6_tmd53"]
+[ext_resource type="Texture2D" uid="uid://cm6dhutmxp86p" path="res://assets/backgrounds/water/frame_6.png" id="7_hxrjy"]
+[ext_resource type="Texture2D" uid="uid://dx1ksoegl5gb4" path="res://assets/backgrounds/water/frame_7.png" id="8_w4kvp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_17w7t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sdefs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eoue1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_urm55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e8mow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aecnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tmd53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hxrjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w4kvp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="River" type="AnimatedSprite2D"]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_17w7t")
+autoplay = "default"
+frame_progress = 0.426797

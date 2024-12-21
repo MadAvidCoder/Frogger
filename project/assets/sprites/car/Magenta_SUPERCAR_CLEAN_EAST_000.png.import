@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duc3oinmxbjyj"
-path="res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"
+uid="uid://b07654oo5d6dd"
+path="res://.godot/imported/Magenta_SUPERCAR_CLEAN_EAST_000.png-2854fd23cfe8b14c9f53b0612b2cb066.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/log/long.png"
-dest_files=["res://.godot/imported/long.png-acdc8ebe5cf689bab73b55d64644e2cc.ctex"]
+source_file="res://assets/sprites/car/Magenta_SUPERCAR_CLEAN_EAST_000.png"
+dest_files=["res://.godot/imported/Magenta_SUPERCAR_CLEAN_EAST_000.png-2854fd23cfe8b14c9f53b0612b2cb066.ctex"]
 
 [params]
 
