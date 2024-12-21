@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://0olp874htmvd"]
+[gd_scene load_steps=41 format=3 uid="uid://0olp874htmvd"]
 
 [ext_resource type="PackedScene" uid="uid://bundsotadavd1" path="res://grass.tscn" id="1_g8kun"]
 [ext_resource type="Texture2D" uid="uid://ca2o57e5pe46s" path="res://assets/sprites/frog/forward/jump_0.png" id="1_g63w2"]
@@ -30,6 +30,14 @@
 [ext_resource type="Texture2D" uid="uid://cld84txq14pm2" path="res://assets/sprites/frog/right/jump_1.png" id="23_3gey7"]
 [ext_resource type="Texture2D" uid="uid://dhy8r2hhj5kw3" path="res://assets/sprites/frog/right/jump_2.png" id="24_sh3jl"]
 [ext_resource type="Script" path="res://frog.gd" id="30_cct47"]
+[ext_resource type="Texture2D" uid="uid://cpnbrqxuu7b44" path="res://assets/backgrounds/water/frame_0.png" id="31_uhy25"]
+[ext_resource type="Texture2D" uid="uid://22t2tmys65ah" path="res://assets/backgrounds/water/frame_1.png" id="32_2cmrl"]
+[ext_resource type="Texture2D" uid="uid://fd03tydfnir6" path="res://assets/backgrounds/water/frame_2.png" id="33_3xqjv"]
+[ext_resource type="Texture2D" uid="uid://d3ehcxsekssl3" path="res://assets/backgrounds/water/frame_3.png" id="34_71uvk"]
+[ext_resource type="Texture2D" uid="uid://on6xitqb8s7j" path="res://assets/backgrounds/water/frame_4.png" id="35_o64i6"]
+[ext_resource type="Texture2D" uid="uid://rk1hc7gd544h" path="res://assets/backgrounds/water/frame_5.png" id="36_0r432"]
+[ext_resource type="Texture2D" uid="uid://cm6dhutmxp86p" path="res://assets/backgrounds/water/frame_6.png" id="37_s5tyq"]
+[ext_resource type="Texture2D" uid="uid://dx1ksoegl5gb4" path="res://assets/backgrounds/water/frame_7.png" id="38_a1eeu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a28tb"]
 animations = [{
@@ -199,6 +207,38 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_17w7t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_2cmrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_uhy25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3xqjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_71uvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_o64i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_0r432")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_s5tyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_a1eeu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -214,6 +254,14 @@ position = Vector2(576, 595)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_a28tb")
 animation = &"forward_stationary"
+autoplay = "forward_stationary"
 script = ExtResource("30_cct47")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 397)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_17w7t")
+autoplay = "default"
+frame_progress = 0.426797
 
 [connection signal="animation_finished" from="Frog" to="Frog" method="_on_animation_finished"]
