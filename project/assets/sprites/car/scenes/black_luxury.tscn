@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2i17to4jaj16"]
+
+[ext_resource type="Texture2D" uid="uid://cx48nd4owxfma" path="res://assets/sprites/car/Black_LUXURY_CLEAN_EAST_000.png" id="1_kmqc3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mjqj"]
+size = Vector2(86.2791, 20)
+
+[node name="BlackLuxury" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("1_kmqc3")
+offset = Vector2(0, -4)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(-1.51163, 0)
+shape = SubResource("RectangleShape2D_0mjqj")

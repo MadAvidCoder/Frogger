@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3mhlfgkepnoo"]
+
+[ext_resource type="Texture2D" uid="uid://ccurtpacn3lgt" path="res://assets/sprites/car/Green_COUPE_CLEAN_EAST_000.png" id="1_uaoj4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkh4u"]
+size = Vector2(83.5556, 20)
+
+[node name="GreenCoupe" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("1_uaoj4")
+offset = Vector2(0, -3)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(-1.77778, 0)
+shape = SubResource("RectangleShape2D_fkh4u")

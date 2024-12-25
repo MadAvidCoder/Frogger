@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://l4bxjk6a2ppg"]
+
+[ext_resource type="Texture2D" uid="uid://c75y2b12bx713" path="res://assets/sprites/car/Blue_SEDAN_CLEAN_EAST_000.png" id="1_0pnf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3evl"]
+size = Vector2(81.9048, 20)
+
+[node name="BlueSedan" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4.2, 4.2)
+texture = ExtResource("1_0pnf6")
+offset = Vector2(0, -4)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(1.42858, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_h3evl")

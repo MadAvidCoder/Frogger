@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://1b8t13m03buu"]
+
+[ext_resource type="Texture2D" uid="uid://dhrgcmg4ofeiv" path="res://assets/sprites/car/Black_JEEP_CLEAN_EAST_000.png" id="1_lfp3b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4s5u"]
+size = Vector2(55.1111, 32)
+
+[node name="BlackJeep" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("1_lfp3b")
+offset = Vector2(0, -6)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(8.47711e-07, -2.44444)
+shape = SubResource("RectangleShape2D_v4s5u")

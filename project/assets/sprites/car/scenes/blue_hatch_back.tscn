@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cecjh2clc8n14"]
+
+[ext_resource type="Texture2D" uid="uid://dnf8tbab2xrig" path="res://assets/sprites/car/Blue_HatchBack_CLEAN_EAST_000.png" id="1_5q7te"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbuh"]
+size = Vector2(76.5116, 20)
+
+[node name="BlueHatchBack" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("1_5q7te")
+offset = Vector2(0, -5)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(1.51163, 0)
+shape = SubResource("RectangleShape2D_qnbuh")

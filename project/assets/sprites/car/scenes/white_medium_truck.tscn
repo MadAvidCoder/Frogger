@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxudwxem2omsl"]
+
+[ext_resource type="Texture2D" uid="uid://c81fi3kayly68" path="res://assets/sprites/car/White_MEDIUMTRUCK_CLEAN_EAST_000.png" id="1_pb0jg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cc1jl"]
+size = Vector2(109.25, 36.5)
+
+[node name="WhiteMediumTruck" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_pb0jg")
+offset = Vector2(0, -5)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(1.375, -4.5)
+shape = SubResource("RectangleShape2D_cc1jl")

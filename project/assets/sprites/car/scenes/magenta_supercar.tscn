@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf68uf00vwkrs"]
+
+[ext_resource type="Texture2D" uid="uid://b07654oo5d6dd" path="res://assets/sprites/car/Magenta_SUPERCAR_CLEAN_EAST_000.png" id="1_tb15k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmslx"]
+size = Vector2(83, 20)
+
+[node name="MagentaSupercar" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_tb15k")
+offset = Vector2(0, -4)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(0.75, 0)
+shape = SubResource("RectangleShape2D_lmslx")

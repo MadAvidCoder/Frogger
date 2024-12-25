@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt3rex1stsgtk"]
+
+[ext_resource type="Texture2D" uid="uid://dyhb8o1so5xxe" path="res://assets/backgrounds/road/two_lanes.png" id="1_om4n0"]
+[ext_resource type="Script" path="res://assets/scripts/road.gd" id="2_0v3n0"]
+
+[node name="Road" type="Sprite2D"]
+scale = Vector2(0.431, 0.431)
+texture = ExtResource("1_om4n0")
+offset = Vector2(-40, 0)
+script = ExtResource("2_0v3n0")
