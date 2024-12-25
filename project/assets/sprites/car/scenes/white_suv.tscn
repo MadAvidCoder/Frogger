@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c70vnwuembme6"]
+
+[ext_resource type="Texture2D" uid="uid://bsjb71vjosbd4" path="res://assets/sprites/car/White_SUV_CLEAN_EAST_000.png" id="1_83po2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3klkd"]
+size = Vector2(75, 32.25)
+
+[node name="WhiteSuv" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_83po2")
+offset = Vector2(0, -3)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(1.5, -0.625)
+shape = SubResource("RectangleShape2D_3klkd")

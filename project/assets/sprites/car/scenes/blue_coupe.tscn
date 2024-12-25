@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc1u03aj8m3eu"]
+
+[ext_resource type="Texture2D" uid="uid://c3gknk07d0lrt" path="res://assets/sprites/car/Blue_COUPE_CLEAN_EAST_000.png" id="1_6h3lt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrn01"]
+size = Vector2(80.75, 20)
+
+[node name="BlueCoupe" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_6h3lt")
+offset = Vector2(0, -3)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(-2.375, 0)
+shape = SubResource("RectangleShape2D_hrn01")

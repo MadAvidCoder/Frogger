@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1c13cbjn3rbb"]
+[gd_scene load_steps=12 format=3 uid="uid://c1c13cbjn3rbb"]
 
 [ext_resource type="Texture2D" uid="uid://22t2tmys65ah" path="res://assets/backgrounds/water/frame_1.png" id="1_sdefs"]
 [ext_resource type="Texture2D" uid="uid://cpnbrqxuu7b44" path="res://assets/backgrounds/water/frame_0.png" id="2_eoue1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://rk1hc7gd544h" path="res://assets/backgrounds/water/frame_5.png" id="6_tmd53"]
 [ext_resource type="Texture2D" uid="uid://cm6dhutmxp86p" path="res://assets/backgrounds/water/frame_6.png" id="7_hxrjy"]
 [ext_resource type="Texture2D" uid="uid://dx1ksoegl5gb4" path="res://assets/backgrounds/water/frame_7.png" id="8_w4kvp"]
+[ext_resource type="Script" path="res://assets/scripts/river.gd" id="9_mcei2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_17w7t"]
 animations = [{
@@ -41,8 +42,19 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgf6k"]
+size = Vector2(9920, 3460)
+
 [node name="River" type="AnimatedSprite2D"]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.05, 0.051)
 sprite_frames = SubResource("SpriteFrames_17w7t")
 autoplay = "default"
 frame_progress = 0.426797
+script = ExtResource("9_mcei2")
+
+[node name="River_Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="River_Area"]
+position = Vector2(0.00082016, 10.0002)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_jgf6k")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://br8u1g2sanx62"]
+
+[ext_resource type="Texture2D" uid="uid://ca4amud6280m4" path="res://assets/sprites/car/Red_PICKUP_CLEAN_EAST_000.png" id="1_kgyyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obio8"]
+size = Vector2(81.4286, 20)
+
+[node name="RedPickup" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4.2, 4.2)
+texture = ExtResource("1_kgyyf")
+offset = Vector2(0, -3)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(-0.238097, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_obio8")

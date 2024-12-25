@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuahjqb1gmvla"]
+[gd_scene load_steps=3 format=3 uid="uid://cuahjqb1gmvla"]
 
 [ext_resource type="Texture2D" uid="uid://boyvr7suylaw0" path="res://assets/sprites/log/short.png" id="1_stesr"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvbrq"]
+size = Vector2(1896, 900)
+
 [node name="Short" type="Sprite2D"]
 texture_filter = 1
-scale = Vector2(5, 5)
 texture = ExtResource("1_stesr")
+
+[node name="Short_Log_Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Short_Log_Area"]
+shape = SubResource("RectangleShape2D_fvbrq")

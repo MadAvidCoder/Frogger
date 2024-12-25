@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://iflwg7i0cbkw"]
+
+[ext_resource type="Texture2D" uid="uid://c5fe17r6l5rji" path="res://assets/sprites/car/POLICE_CLEAN_EAST_000.png" id="1_cem6e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66oc7"]
+size = Vector2(80.25, 20)
+
+[node name="Police" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_cem6e")
+offset = Vector2(0, -3)
+
+[node name="CarArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CarArea"]
+position = Vector2(0.625, 0)
+shape = SubResource("RectangleShape2D_66oc7")
