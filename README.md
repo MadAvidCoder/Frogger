@@ -3,11 +3,7 @@
 An endless runner remix of the classic arcade game Frogger. How far can you guide the frog safely over roads and rivers?
 
 ## Demo
-![A demo video of Infinite Frogger ](https://cloud-8g8j8avmo-hack-club-bot.vercel.app/0infinite_frogger_demo_video.mp4)
-
-<video width="320" height="240" controls>
-  <source src="https://cloud-8g8j8avmo-hack-club-bot.vercel.app/0infinite_frogger_demo_video.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/b83a4a8c-c921-4005-a50c-089a8d91ffcd
 
 ## Play
 Head to https://madavidcoder.github.io/Frogger to play.
