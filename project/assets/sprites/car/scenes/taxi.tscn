@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://nty0kv7jll2t"]
 
-[ext_resource type="Texture2D" uid="uid://d2r8exoreslts" path="res://assets/sprites/car/TAXI_CLEAN_EAST_000.png" id="1_shipu"]
+[ext_resource type="Texture2D" uid="uid://dpbgey768raj" path="res://assets/sprites/car/textures/taxi.tres" id="1_x4kp7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lf6gx"]
 size = Vector2(80.75, 29.5)
@@ -8,7 +8,7 @@ size = Vector2(80.75, 29.5)
 [node name="Taxi" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("1_shipu")
+texture = ExtResource("1_x4kp7")
 offset = Vector2(0, -3)
 
 [node name="CarArea" type="Area2D" parent="."]

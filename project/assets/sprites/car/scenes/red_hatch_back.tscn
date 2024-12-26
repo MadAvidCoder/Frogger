@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3rcwedi5qas2"]
 
-[ext_resource type="Texture2D" uid="uid://cs42wpllvhphg" path="res://assets/sprites/car/Red_HatchBack_CLEAN_EAST_000.png" id="1_g1k52"]
+[ext_resource type="Texture2D" uid="uid://dmcrduby2vkq3" path="res://assets/sprites/car/textures/red_hatch_back.tres" id="1_0orl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sduk7"]
 size = Vector2(76.75, 20)
@@ -8,7 +8,7 @@ size = Vector2(76.75, 20)
 [node name="RedHatchBack" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("1_g1k52")
+texture = ExtResource("1_0orl8")
 offset = Vector2(0, -4)
 
 [node name="CarArea" type="Area2D" parent="."]

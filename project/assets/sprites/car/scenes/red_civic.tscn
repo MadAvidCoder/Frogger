@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0dfqy12gmokr"]
 
-[ext_resource type="Texture2D" uid="uid://dcr1r014ya2sk" path="res://assets/sprites/car/Red_CIVIC_CLEAN_EAST_000.png" id="1_372sg"]
+[ext_resource type="Texture2D" uid="uid://demqpl2mav6gs" path="res://assets/sprites/car/textures/red_civic.tres" id="1_ssv6s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8iy0"]
 size = Vector2(52.8421, 20)
@@ -8,7 +8,7 @@ size = Vector2(52.8421, 20)
 [node name="RedCivic" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(4.75, 4.75)
-texture = ExtResource("1_372sg")
+texture = ExtResource("1_ssv6s")
 offset = Vector2(0, -4)
 
 [node name="CarArea" type="Area2D" parent="."]

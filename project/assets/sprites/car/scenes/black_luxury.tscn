@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2i17to4jaj16"]
 
-[ext_resource type="Texture2D" uid="uid://cx48nd4owxfma" path="res://assets/sprites/car/Black_LUXURY_CLEAN_EAST_000.png" id="1_kmqc3"]
+[ext_resource type="Texture2D" uid="uid://cgvakw8u1dvk2" path="res://assets/sprites/car/textures/black_luxury.tres" id="1_7t5xt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mjqj"]
 size = Vector2(86.2791, 20)
@@ -8,7 +8,7 @@ size = Vector2(86.2791, 20)
 [node name="BlackLuxury" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(4.3, 4.3)
-texture = ExtResource("1_kmqc3")
+texture = ExtResource("1_7t5xt")
 offset = Vector2(0, -4)
 
 [node name="CarArea" type="Area2D" parent="."]

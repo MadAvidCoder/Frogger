@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://ds011byk6cl46"]
 
-[ext_resource type="Texture2D" uid="uid://duc3oinmxbjyj" path="res://assets/sprites/log/long.png" id="1_m24ji"]
+[ext_resource type="Texture2D" uid="uid://b4uhb5peqxfiw" path="res://assets/long_log.tres" id="1_ngdq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2k2o"]
 size = Vector2(2797, 903)
 
 [node name="Long" type="Sprite2D"]
 texture_filter = 1
-texture = ExtResource("1_m24ji")
+texture = ExtResource("1_ngdq3")
 
 [node name="Long_Log_Area" type="Area2D" parent="."]
 

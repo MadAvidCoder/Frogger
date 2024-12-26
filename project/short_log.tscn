@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuahjqb1gmvla"]
 
-[ext_resource type="Texture2D" uid="uid://boyvr7suylaw0" path="res://assets/sprites/log/short.png" id="1_stesr"]
+[ext_resource type="Texture2D" uid="uid://dpf7mmnbqob7f" path="res://assets/short_log.tres" id="1_5o08p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvbrq"]
 size = Vector2(1896, 900)
 
 [node name="Short" type="Sprite2D"]
 texture_filter = 1
-texture = ExtResource("1_stesr")
+texture = ExtResource("1_5o08p")
 
 [node name="Short_Log_Area" type="Area2D" parent="."]
 

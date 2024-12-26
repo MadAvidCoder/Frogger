@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://et1vp2lqf1uc"]
 
-[ext_resource type="Texture2D" uid="uid://bspqcopeplgfl" path="res://assets/sprites/car/Green_WAGON_CLEAN_EAST_000.png" id="1_8inbb"]
+[ext_resource type="Texture2D" uid="uid://dl1pvb0hvkjy4" path="res://assets/sprites/car/textures/green_wagon.tres" id="1_jft5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to56e"]
 size = Vector2(84.5652, 20)
@@ -8,7 +8,7 @@ size = Vector2(84.5652, 20)
 [node name="GreenWagon" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(4.6, 4.6)
-texture = ExtResource("1_8inbb")
+texture = ExtResource("1_jft5v")
 offset = Vector2(0, -3)
 
 [node name="CarArea" type="Area2D" parent="."]
