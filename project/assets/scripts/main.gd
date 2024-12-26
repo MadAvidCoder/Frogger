@@ -53,6 +53,8 @@ func _process(delta: float) -> void:
 		
 	if not begun and Input.is_action_just_pressed("start"):
 		_start_game()
+	elif $End.visible == true and Input.is_action_just_pressed("start"):
+		_restart_game()
 	
 
 func _scroll_screen(amount: Variant) -> void:
@@ -74,3 +76,6 @@ func _on_frog_ended() -> void:
 func _on_timer_timeout() -> void:
 	$End.show()
 	scroll = false
+
+func _restart_game() -> void:
+	get_tree().reload_current_scene()

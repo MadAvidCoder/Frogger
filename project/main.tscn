@@ -342,9 +342,18 @@ texture = ExtResource("38_s2m30")
 
 [node name="Frog" type="Sprite2D" parent="End"]
 texture_filter = 1
-position = Vector2(576, 429)
+position = Vector2(576, 389)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("9_x6ipw")
+
+[node name="Button" type="Button" parent="End"]
+offset_left = 444.0
+offset_top = 532.0
+offset_right = 708.0
+offset_bottom = 573.0
+theme_override_fonts/font = ExtResource("37_ujkdl")
+theme_override_font_sizes/font_size = 32
+text = "Play Again?"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -368,4 +377,5 @@ horizontal_alignment = 2
 [connection signal="ended" from="Frog" to="." method="_on_frog_ended"]
 [connection signal="scroll_screen" from="Frog" to="." method="_scroll_screen"]
 [connection signal="pressed" from="Start/Button" to="." method="_start_game"]
+[connection signal="pressed" from="End/Button" to="." method="_restart_game"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
