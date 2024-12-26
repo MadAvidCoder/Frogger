@@ -79,7 +79,7 @@ func _process(delta: float) -> void:
 	if middle_bottom_next <= 0:
 		var new = car_scenes.pick_random().instantiate()
 		add_child(new)
-		new.z_index = 2
+		new.z_index = 4
 		if dir:
 			new.flip_h = true
 			new.position = Vector2(640+new.get_rect().size.x/2+50,middle_bottom)
