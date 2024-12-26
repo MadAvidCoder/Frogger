@@ -1,60 +1,49 @@
 [gd_scene load_steps=12 format=3 uid="uid://c1c13cbjn3rbb"]
 
-[ext_resource type="Texture2D" uid="uid://22t2tmys65ah" path="res://assets/backgrounds/water/frame_1.png" id="1_sdefs"]
-[ext_resource type="Texture2D" uid="uid://cpnbrqxuu7b44" path="res://assets/backgrounds/water/frame_0.png" id="2_eoue1"]
-[ext_resource type="Texture2D" uid="uid://fd03tydfnir6" path="res://assets/backgrounds/water/frame_2.png" id="3_urm55"]
-[ext_resource type="Texture2D" uid="uid://d3ehcxsekssl3" path="res://assets/backgrounds/water/frame_3.png" id="4_e8mow"]
-[ext_resource type="Texture2D" uid="uid://on6xitqb8s7j" path="res://assets/backgrounds/water/frame_4.png" id="5_aecnd"]
-[ext_resource type="Texture2D" uid="uid://rk1hc7gd544h" path="res://assets/backgrounds/water/frame_5.png" id="6_tmd53"]
-[ext_resource type="Texture2D" uid="uid://cm6dhutmxp86p" path="res://assets/backgrounds/water/frame_6.png" id="7_hxrjy"]
-[ext_resource type="Texture2D" uid="uid://dx1ksoegl5gb4" path="res://assets/backgrounds/water/frame_7.png" id="8_w4kvp"]
+[ext_resource type="Texture2D" uid="uid://bjlsw65lrlpnk" path="res://assets/backgrounds/water/tiles/frame_0.png" id="1_fxcyr"]
+[ext_resource type="Texture2D" uid="uid://japbsa26yxwl" path="res://assets/backgrounds/water/tiles/frame_1.png" id="2_f1vpd"]
+[ext_resource type="Texture2D" uid="uid://ec78g1dqdwgr" path="res://assets/backgrounds/water/tiles/frame_2.png" id="3_kkfiq"]
+[ext_resource type="Texture2D" uid="uid://i3owsy3i3yxy" path="res://assets/backgrounds/water/tiles/frame_3.png" id="4_dqfvv"]
+[ext_resource type="Texture2D" uid="uid://duw0bg4o0v2aa" path="res://assets/backgrounds/water/tiles/frame_4.png" id="5_glfao"]
+[ext_resource type="Texture2D" uid="uid://c8fpo6182bre8" path="res://assets/backgrounds/water/tiles/frame_5.png" id="6_me2a6"]
+[ext_resource type="Texture2D" uid="uid://qyagygts42vo" path="res://assets/backgrounds/water/tiles/frame_6.png" id="7_robuc"]
+[ext_resource type="Texture2D" uid="uid://dvc061orbi672" path="res://assets/backgrounds/water/tiles/frame_7.png" id="8_x7i0a"]
 [ext_resource type="Script" path="res://assets/scripts/river.gd" id="9_mcei2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_17w7t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_sdefs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_eoue1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_urm55")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_e8mow")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_aecnd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_tmd53")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_hxrjy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_w4kvp")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
-}]
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_uoqmt"]
+frames = 8
+speed_scale = 6.0
+frame_0/texture = ExtResource("1_fxcyr")
+frame_1/texture = ExtResource("2_f1vpd")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_kkfiq")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_dqfvv")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_glfao")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_me2a6")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_robuc")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("8_x7i0a")
+frame_7/duration = 1.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgf6k"]
-size = Vector2(9920, 3460)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tcwa"]
+resource_local_to_scene = true
+size = Vector2(10000, 3600)
 
-[node name="River" type="AnimatedSprite2D"]
-scale = Vector2(0.05, 0.051)
-sprite_frames = SubResource("SpriteFrames_17w7t")
-autoplay = "default"
-frame_progress = 0.426797
+[node name="TextureRect" type="TextureRect"]
+offset_right = 10000.0
+offset_bottom = 3600.0
+scale = Vector2(0.05, 0.05)
+texture = SubResource("AnimatedTexture_uoqmt")
+stretch_mode = 1
 script = ExtResource("9_mcei2")
 
 [node name="River_Area" type="Area2D" parent="."]
 
 [node name="Collision" type="CollisionShape2D" parent="River_Area"]
-position = Vector2(0.00082016, 10.0002)
+position = Vector2(5000, 1800)
 scale = Vector2(0.999999, 0.999999)
-shape = SubResource("RectangleShape2D_jgf6k")
+shape = SubResource("RectangleShape2D_4tcwa")

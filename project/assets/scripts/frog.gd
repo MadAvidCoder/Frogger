@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 
+signal scroll_screen(amount) 
 var dir = ""
 var vel = 0
 var jump_vel = 60
@@ -36,7 +37,7 @@ func _process(delta: float) -> void:
 		if vel >= delta*200:
 			if dir == "forward":
 				position.y -= delta*200
-				get_parent().position.y += delta*100
+				scroll_screen.emit(delta*100)
 			elif dir == "back":
 				position.y += delta*200
 			elif dir == "left":
@@ -81,7 +82,7 @@ func _process(delta: float) -> void:
 			play("dead")
 			ended.emit()
 		elif global_position.y <= 500:
-			get_parent().position.y += delta*(500-global_position.y)
+			scroll_screen.emit(delta*(500-global_position.y))
 	
 	if score_num > int(score.text):
 		score.text = str(score_num)
@@ -93,7 +94,6 @@ func _on_animation_finished() -> void:
 		started = false
 	else:
 		play("%s_stationary" % dir)
-
 
 func _on_started() -> void:
 	started = true
