@@ -10,6 +10,7 @@ var needs_grass = false
 @onready var grass = preload("res://grass.tscn")
 @onready var river = preload("res://river.tscn")
 @onready var road = preload("res://road.tscn")
+@onready var big_road = preload("res://big_road.tscn")
 @onready var short_log = preload("res://short_log.tscn")
 @onready var long_log = preload("res://long_log.tscn")
 
@@ -33,12 +34,20 @@ func _process(delta: float) -> void:
 				top -= size
 				next = size
 			else:
-				needs_grass = true
-				var new = road.instantiate()
-				add_child(new)
-				new.position = Vector2(576,top-90)
-				top -= 180
-				next = 180
+				if randi_range(0,1):
+					needs_grass = true
+					var new = road.instantiate()
+					add_child(new)
+					new.position = Vector2(576,top-90)
+					top -= 180
+					next = 180
+				else:
+					needs_grass = true
+					var new = big_road.instantiate()
+					add_child(new)
+					new.position = Vector2(576,top-180)
+					top -= 360
+					next = 360
 		position.y += delta*30
 		next -= delta*30
 		

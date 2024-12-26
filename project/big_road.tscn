@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1vd057ayo4sl"]
+
+[ext_resource type="Texture2D" uid="uid://cmgkmp7yhsan0" path="res://assets/backgrounds/road/four_lanes.png" id="1_40pss"]
+[ext_resource type="Script" path="res://big_road.gd" id="2_n2b62"]
+
+[node name="Big_Road" type="Sprite2D"]
+scale = Vector2(0.431, 0.431)
+texture = ExtResource("1_40pss")
+offset = Vector2(-40, 0)
+script = ExtResource("2_n2b62")

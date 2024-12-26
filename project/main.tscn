@@ -245,7 +245,7 @@ script = ExtResource("1_j8g8f")
 
 [node name="Left" type="ColorRect" parent="."]
 top_level = true
-z_index = 4
+z_index = 6
 offset_top = -176.0
 offset_right = 326.0
 offset_bottom = 824.0
@@ -253,7 +253,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Right" type="ColorRect" parent="."]
 top_level = true
-z_index = 4
+z_index = 6
 offset_left = 826.0
 offset_top = -176.0
 offset_right = 1152.0
@@ -296,7 +296,7 @@ position = Vector2(576, -54.034)
 
 [node name="Start" type="Node2D" parent="."]
 top_level = true
-z_index = 7
+z_index = 9
 
 [node name="ColorRect" type="ColorRect" parent="Start"]
 offset_right = 1152.0
@@ -328,7 +328,7 @@ text = "Play Game"
 [node name="End" type="Node2D" parent="."]
 visible = false
 top_level = true
-z_index = 5
+z_index = 7
 
 [node name="ColorRect" type="ColorRect" parent="End"]
 offset_right = 1152.0
@@ -351,7 +351,7 @@ one_shot = true
 
 [node name="Score" type="Label" parent="."]
 top_level = true
-z_index = 6
+z_index = 8
 offset_left = 919.0
 offset_top = 11.0
 offset_right = 1142.0
