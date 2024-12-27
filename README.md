@@ -2,11 +2,13 @@
 ### Play it [here](https://madavidcoder.github.io/Frogger)!
 An endless runner remix of the classic arcade game Frogger. How far can you guide the frog safely over roads and rivers?
 
-## Demo
-https://github.com/user-attachments/assets/b83a4a8c-c921-4005-a50c-089a8d91ffcd
+## Demo 
+
+https://github.com/user-attachments/assets/1840aa63-dbfc-4171-b2c2-5be4a5f32d33
+
 
 ## Play
-Head to https://madavidcoder.github.io/Frogger to play.
+Head to [https://madavidcoder.github.io/Frogger](https://madavidcoder.github.io/Frogger) to play.
 
 Use WASD or Arrow Keys to control the frog. Cross the roads and rivers, but don't get hit by cars or fall in the water. Challenge yourself to see how far you can go!
 
