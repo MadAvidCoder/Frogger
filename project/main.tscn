@@ -260,7 +260,7 @@ offset_right = 1152.0
 offset_bottom = 824.0
 color = Color(0, 0, 0, 1)
 
-[node name="Frog" type="AnimatedSprite2D" parent="."]
+[node name="Frog" type="AnimatedSprite2D" parent="." groups=["Frog", "Player"]]
 z_index = 1
 position = Vector2(576, 584.7)
 scale = Vector2(0.4, 0.4)
@@ -294,6 +294,38 @@ position = Vector2(576, 96.045)
 [node name="Grass3" parent="." instance=ExtResource("32_pa55l")]
 position = Vector2(576, -54.034)
 
+[node name="Shop" type="Node2D" parent="."]
+visible = false
+top_level = true
+z_index = 9
+
+[node name="ColorRect" type="ColorRect" parent="Shop"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="Sprite2D" parent="Shop"]
+position = Vector2(576, 85)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("36_rtdw8")
+
+[node name="Frog_Start" type="AnimatedSprite2D" parent="Shop" groups=["Frog", "Player"]]
+texture_filter = 1
+position = Vector2(576, 355)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_dv1ry")
+autoplay = "default"
+frame_progress = 0.40585
+
+[node name="Button" type="Button" parent="Shop"]
+offset_left = 468.0
+offset_top = 532.0
+offset_right = 685.0
+offset_bottom = 573.0
+theme_override_fonts/font = ExtResource("37_ujkdl")
+theme_override_font_sizes/font_size = 32
+text = "Play Game"
+
 [node name="Start" type="Node2D" parent="."]
 top_level = true
 z_index = 9
@@ -308,7 +340,7 @@ position = Vector2(576, 85)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("36_rtdw8")
 
-[node name="Frog" type="AnimatedSprite2D" parent="Start"]
+[node name="Frog_Start" type="AnimatedSprite2D" parent="Start" groups=["Frog", "Player"]]
 texture_filter = 1
 position = Vector2(576, 355)
 scale = Vector2(0.9, 0.9)
@@ -340,7 +372,7 @@ position = Vector2(576, 94)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("38_s2m30")
 
-[node name="Frog" type="Sprite2D" parent="End"]
+[node name="Frog_End" type="Sprite2D" parent="End" groups=["Frog", "Player"]]
 texture_filter = 1
 position = Vector2(576, 389)
 scale = Vector2(0.9, 0.9)
@@ -372,10 +404,11 @@ text = "0"
 horizontal_alignment = 2
 
 [connection signal="started" from="." to="Frog" method="_on_started"]
-[connection signal="started" from="." to="Start/Frog" method="_on_started"]
+[connection signal="started" from="." to="Start/Frog_Start" method="_on_started"]
 [connection signal="animation_finished" from="Frog" to="Frog" method="_on_animation_finished"]
 [connection signal="ended" from="Frog" to="." method="_on_frog_ended"]
 [connection signal="scroll_screen" from="Frog" to="." method="_scroll_screen"]
+[connection signal="pressed" from="Shop/Button" to="." method="_start_game"]
 [connection signal="pressed" from="Start/Button" to="." method="_start_game"]
 [connection signal="pressed" from="End/Button" to="." method="_restart_game"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
