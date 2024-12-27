@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://0olp874htmvd"]
+[gd_scene load_steps=63 format=3 uid="uid://0olp874htmvd"]
 
 [ext_resource type="Texture2D" uid="uid://b4mnluv5lxqn6" path="res://assets/sprites/frog/forward/jump_0.png" id="1_g63w2"]
 [ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_j8g8f"]
@@ -30,12 +30,34 @@
 [ext_resource type="Texture2D" uid="uid://dnaylcfsbeape" path="res://assets/sprites/frog/right/jump_1.png" id="23_3gey7"]
 [ext_resource type="Texture2D" uid="uid://bcnciltlrmyo4" path="res://assets/sprites/frog/right/jump_2.png" id="24_sh3jl"]
 [ext_resource type="Script" path="res://assets/scripts/frog.gd" id="30_cct47"]
+[ext_resource type="Texture2D" uid="uid://e5kej7gy8afj" path="res://assets/sprites/rabbit/rabbit_sheet_10.png" id="31_abd8d"]
 [ext_resource type="PackedScene" uid="uid://c1c13cbjn3rbb" path="res://river.tscn" id="31_q3esx"]
+[ext_resource type="Texture2D" uid="uid://ks6fghj8if6b" path="res://assets/sprites/rabbit/rabbit_sheet_11.png" id="32_cdrto"]
 [ext_resource type="PackedScene" uid="uid://bundsotadavd1" path="res://grass.tscn" id="32_pa55l"]
+[ext_resource type="Texture2D" uid="uid://ba63y203ghi4r" path="res://assets/sprites/rabbit/rabbit_sheet_12.png" id="33_8hpj4"]
 [ext_resource type="PackedScene" uid="uid://dt3rex1stsgtk" path="res://road.tscn" id="33_kbq4s"]
+[ext_resource type="Texture2D" uid="uid://dwyjrvmciylss" path="res://assets/sprites/rabbit/rabbit_sheet_13.png" id="34_7e8al"]
+[ext_resource type="Texture2D" uid="uid://be2aa0oqw78fi" path="res://assets/sprites/rabbit/rabbit_sheet_14.png" id="35_idp6x"]
+[ext_resource type="Texture2D" uid="uid://cub5hyjfksoua" path="res://assets/sprites/rabbit/rabbit_sheet_01.png" id="36_fq1ym"]
 [ext_resource type="Texture2D" uid="uid://baoc80uqj0qni" path="res://assets/text/logo.png" id="36_rtdw8"]
+[ext_resource type="Texture2D" uid="uid://cwvx6t0n10uj4" path="res://assets/sprites/rabbit/rabbit_sheet_40.png" id="36_yqfhq"]
+[ext_resource type="Texture2D" uid="uid://yj7nt5j6q584" path="res://assets/sprites/rabbit/rabbit_sheet_02.png" id="37_2sfv1"]
 [ext_resource type="FontFile" uid="uid://dppkd7fmvp2hr" path="res://assets/text/font.ttf" id="37_ujkdl"]
+[ext_resource type="Texture2D" uid="uid://bv3cv5j6y7ank" path="res://assets/sprites/rabbit/rabbit_sheet_03.png" id="38_p2hcm"]
 [ext_resource type="Texture2D" uid="uid://dw4ajlmd5ejs" path="res://assets/text/over.png" id="38_s2m30"]
+[ext_resource type="Texture2D" uid="uid://hrw0aj6aqapn" path="res://assets/sprites/rabbit/rabbit_sheet_04.png" id="39_jn6qy"]
+[ext_resource type="Texture2D" uid="uid://24qf6hww3vx7" path="res://assets/sprites/rabbit/rabbit_sheet_00.png" id="40_43ima"]
+[ext_resource type="Texture2D" uid="uid://dpgpc13ee5wiw" path="res://assets/sprites/rabbit/rabbit_sheet_31.png" id="41_h4i00"]
+[ext_resource type="Texture2D" uid="uid://dkjfu3tmo432t" path="res://assets/sprites/rabbit/rabbit_sheet_32.png" id="42_dvv63"]
+[ext_resource type="Texture2D" uid="uid://x6m66u00kd1p" path="res://assets/sprites/rabbit/rabbit_sheet_33.png" id="43_j8yti"]
+[ext_resource type="Texture2D" uid="uid://dd83kdcpnhqnk" path="res://assets/sprites/rabbit/rabbit_sheet_34.png" id="44_8kkuj"]
+[ext_resource type="Texture2D" uid="uid://40j453wp0dov" path="res://assets/sprites/rabbit/rabbit_sheet_30.png" id="44_fmqrq"]
+[ext_resource type="Texture2D" uid="uid://cyphjf6adu0bo" path="res://assets/sprites/rabbit/rabbit_sheet_21.png" id="45_tmqqk"]
+[ext_resource type="Texture2D" uid="uid://7mrtrbc0d5dx" path="res://assets/sprites/rabbit/rabbit_sheet_22.png" id="46_tax67"]
+[ext_resource type="Texture2D" uid="uid://b0xluc3cfv1ca" path="res://assets/sprites/rabbit/rabbit_sheet_23.png" id="47_0ehgn"]
+[ext_resource type="Texture2D" uid="uid://6evirlskl441" path="res://assets/sprites/rabbit/rabbit_sheet_24.png" id="48_mt4qc"]
+[ext_resource type="Texture2D" uid="uid://cs1df856r6ef3" path="res://assets/sprites/rabbit/rabbit_sheet_20.png" id="49_18c42"]
+[ext_resource type="Script" path="res://rabbit.gd" id="51_wqeh6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a28tb"]
 animations = [{
@@ -172,7 +194,116 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsnyu"]
 size = Vector2(80, 70)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0kpmg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxown"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_fq1ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_2sfv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_p2hcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jn6qy")
+}],
+"loop": false,
+"name": &"back_jump",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_43ima")
+}],
+"loop": true,
+"name": &"back_stationary",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_yqfhq")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_cdrto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8hpj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7e8al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_idp6x")
+}],
+"loop": false,
+"name": &"forward_jump",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_abd8d")
+}],
+"loop": true,
+"name": &"forward_stationary",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_h4i00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dvv63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_j8yti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_8kkuj")
+}],
+"loop": false,
+"name": &"left_jump",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_fmqrq")
+}],
+"loop": true,
+"name": &"left_stationary",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_tmqqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_tax67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_0ehgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_mt4qc")
+}],
+"loop": false,
+"name": &"right_jump",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_18c42")
+}],
+"loop": true,
+"name": &"right_stationary",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dv1ry"]
 animations = [{
@@ -227,11 +358,13 @@ offset_bottom = 824.0
 color = Color(0, 0, 0, 1)
 
 [node name="Frog" type="AnimatedSprite2D" parent="." groups=["Frog", "Player"]]
+visible = false
 z_index = 1
+texture_filter = 1
 position = Vector2(576, 584.7)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_a28tb")
-animation = &"back_jump"
+animation = &"forward_stationary"
 autoplay = "forward_stationary"
 script = ExtResource("30_cct47")
 
@@ -241,18 +374,22 @@ script = ExtResource("30_cct47")
 position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_dsnyu")
 
-[node name="Rabbit" type="AnimatedSprite2D" parent="." groups=["Frog", "Player"]]
-visible = false
+[node name="Rabbit" type="AnimatedSprite2D" parent="." groups=["Player", "Rabbit"]]
 z_index = 1
+texture_filter = 1
 position = Vector2(576, 584.7)
-scale = Vector2(0.4, 0.4)
-sprite_frames = SubResource("SpriteFrames_0kpmg")
-script = ExtResource("30_cct47")
+scale = Vector2(1.54, 1.54)
+sprite_frames = SubResource("SpriteFrames_gxown")
+animation = &"forward_stationary"
+autoplay = "forward_stationary"
+offset = Vector2(0, -5)
+script = ExtResource("51_wqeh6")
 
-[node name="Frog_Area" type="Area2D" parent="Rabbit"]
+[node name="Rabbit_Area" type="Area2D" parent="Rabbit"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rabbit/Frog_Area"]
-position = Vector2(0, -17.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rabbit/Rabbit_Area"]
+position = Vector2(0, -2)
+scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_dsnyu")
 
 [node name="River" parent="." instance=ExtResource("31_q3esx")]
@@ -385,7 +522,7 @@ text = "0"
 horizontal_alignment = 2
 
 [connection signal="started" from="." to="Frog" method="_on_started"]
-[connection signal="started" from="." to="Start/Frog_Start" method="_on_started"]
+[connection signal="started" from="." to="Rabbit" method="_on_started"]
 [connection signal="animation_finished" from="Frog" to="Frog" method="_on_animation_finished"]
 [connection signal="ended" from="Frog" to="." method="_on_frog_ended"]
 [connection signal="scroll_screen" from="Frog" to="." method="_scroll_screen"]

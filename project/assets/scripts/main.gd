@@ -2,7 +2,7 @@ extends Node2D
 
 var top = -114.034
 var next = 0
-signal started
+signal started(character)
 var scroll = false
 var begun = false
 var needs_grass = false
@@ -71,7 +71,7 @@ func _start_game() -> void:
 	begun = true
 	$Start.hide()
 	$End.hide()
-	started.emit()
+	started.emit("rabbit")
 	scroll = true
 	$Start.queue_free()
 
