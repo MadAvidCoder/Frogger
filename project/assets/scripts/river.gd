@@ -1,150 +1,111 @@
-extends AnimatedSprite2D
+extends TextureRect
 
-var top = -1200
-var middle = 0
-var bottom = 1200
+var pos
+var lanes
 @onready var short = preload("res://short_log.tscn")
 @onready var long = preload("res://long_log.tscn")
-var top_logs = []
-var middle_logs = []
-var bottom_logs = []
-var top_next
-var middle_next
-var bottom_next
-var top_vel
-var middle_vel
-var bottom_vel
+@onready var collision = $River_Area/Collision
+var logs = []
+var next = []
+var vel = []
 var dir
 
 func _ready() -> void:
 	randomize()
-	top_next = randf_range(0,1)
-	middle_next = randf_range(0,1)
-	bottom_next = randf_range(0,1)
-	top_vel = randf_range(1300,3000)
-	middle_vel = randf_range(1300,3000)
-	bottom_vel = randf_range(1300,3000)
+	if global_position.y == 306:
+		set_meta("lanes",3)
+		size = Vector2(10000,3600)
+		collision.shape.size = Vector2(10000,3600)
+		collision.position = Vector2(5000,1800)
+		lanes = 3
+		pos = [600,1800,3000]
+	else:
+		var lanes_sel = randf()
+		if lanes_sel <= 0.15:
+			set_meta("lanes",2)
+			size = Vector2(10000,2400)
+			collision.shape.size = Vector2(10000,2400)
+			collision.position = Vector2(5000,1200)
+			lanes = 2
+			pos = [600,1800]
+		elif lanes_sel <= 0.4:
+			set_meta("lanes",3)
+			size = Vector2(10000,3600)
+			collision.shape.size = Vector2(10000,3600)
+			collision.position = Vector2(5000,1800)
+			lanes = 3
+			pos = [600,1800,3000]
+		elif lanes_sel <= 0.7:
+			set_meta("lanes",4)
+			size = Vector2(10000,4800)
+			collision.shape.size = Vector2(10000,4800)
+			collision.position = Vector2(5000,2400)
+			lanes = 4
+			pos = [600,1800,3000,4200]
+		elif lanes_sel <= 0.9:
+			set_meta("lanes",5)
+			size = Vector2(10000,6000)
+			collision.shape.size = Vector2(10000,6000)
+			collision.position = Vector2(5000,3000)
+			lanes = 5
+			pos = [600,1800,3000,4200,5400]
+		else:
+			set_meta("lanes",6)
+			size = Vector2(10000,7200)
+			collision.shape.size = Vector2(10000,7200)
+			collision.position = Vector2(5000,3600)
+			lanes = 6
+			pos = [600,1800,3000,4200,5400,6600]
+	
+	for i in range(lanes):
+		next.append(randf_range(0,1))
+		vel.append(randf_range(1300,3000))
+		logs.append([])
 	dir = randi_range(0,1)
+	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if top_next <= 0:
-		if randi_range(0,1):
-			var new = short.instantiate()
-			add_child(new)
-			if dir:
-				new.set_meta("velocity",-top_vel)
-				new.position = Vector2(5950,top)
-				top_next = randf_range(1,2.5)+1900/top_vel
+	for i in range(lanes):
+		if next[i] <= 0:
+			if randi_range(0,1):
+				var new = short.instantiate()
+				add_child(new)
+				if dir != i%2:
+					new.set_meta("velocity",-vel[i])
+					new.position = Vector2(11000,pos[i])
+					next[i] = randf_range(1,2.5)+1900/vel[i]
+				else:
+					new.set_meta("velocity",vel[i])
+					new.position = Vector2(-1000,pos[i])
+					next[i] = randf_range(1,2.5)+1900/vel[i]
+				logs[i].append(new)
 			else:
-				new.set_meta("velocity",top_vel)
-				new.position = Vector2(-5950,top)
-				top_next = randf_range(1,2.5)+1900/top_vel
-			top_logs.append(new)
-		else:
-			var new = long.instantiate()
-			add_child(new)
-			if dir:
-				new.set_meta("velocity",-top_vel)
-				new.position = Vector2(6400,top)
-				top_next = randf_range(1,2.5)+2800/top_vel
-			else:
-				new.set_meta("velocity",top_vel)
-				new.position = Vector2(-6400,top)
-				top_next = randf_range(1,2.5)+2800/top_vel
-			top_logs.append(new)
-	if middle_next <= 0:
-		if randi_range(0,1):
-			var new = short.instantiate()
-			add_child(new)
-			if dir:
-				new.set_meta("velocity",middle_vel)
-				new.position = Vector2(-5950,middle)
-				middle_next = randf_range(1,2.5)+1900/middle_vel
-			else:
-				new.set_meta("velocity",-middle_vel)
-				new.position = Vector2(5950,middle)
-				middle_next = randf_range(1,2.5)+1900/middle_vel
-			middle_logs.append(new)
-		else:
-			var new = long.instantiate()
-			new.set_meta("velocity",middle_vel)
-			add_child(new)
-			if dir:
-				new.set_meta("velocity",middle_vel)
-				new.position = Vector2(-6400,middle)
-				middle_next = randf_range(1,2.5)+2800/middle_vel
-			else:
-				new.set_meta("velocity",-middle_vel)
-				new.position = Vector2(6400,middle)
-				middle_next = randf_range(1,2.5)+2800/middle_vel
-			middle_logs.append(new)
-	if bottom_next <= 0:
-		if randi_range(0,1):
-			var new = short.instantiate()
-			add_child(new)
-			if dir:
-				new.set_meta("velocity",-bottom_vel)
-				new.position = Vector2(5950,bottom)
-				bottom_next = randf_range(1,2.5)+1900/bottom_vel
-			else:
-				new.set_meta("velocity",bottom_vel)
-				new.position = Vector2(-5950,bottom)
-				bottom_next = randf_range(1,2.5)+1900/bottom_vel
-			bottom_logs.append(new)
-		else:
-			var new = long.instantiate()
-			new.set_meta("velocity",bottom_vel)
-			add_child(new)
-			if dir:
-				new.set_meta("velocity",-bottom_vel)
-				new.position = Vector2(6400,bottom)
-				bottom_next = randf_range(1,2.5)+2800/bottom_vel
-			else:
-				new.set_meta("velocity",bottom_vel)
-				new.position = Vector2(-6400,bottom)
-				bottom_next = randf_range(1,2.5)+2800/bottom_vel
-			bottom_logs.append(new)
+				var new = long.instantiate()
+				add_child(new)
+				if dir != i%2:
+					new.set_meta("velocity",-vel[i])
+					new.position = Vector2(11500,pos[i])
+					next[i] = randf_range(1,2.5)+2800/vel[i]
+				else:
+					new.set_meta("velocity",vel[i])
+					new.position = Vector2(-1500,pos[i])
+					next[i] = randf_range(1,2.5)+2800/vel[i]
+				logs[i].append(new)
 	
-	for log in top_logs:
-		if dir:
-			log.position.x -= top_vel*delta
-			if log.position.x < -5000 - (log.texture.get_width()*log.scale.x)/2:
-				log.queue_free()
-				top_logs.erase(log)
-		else:
-			log.position.x += top_vel*delta
-			if log.position.x > 5000 + (log.texture.get_width()*log.scale.x)/2:
-				log.queue_free()
-				top_logs.erase(log)
-	for log in middle_logs:
-		if dir:
-			log.position.x += middle_vel*delta
-			if log.position.x < -5000 - (log.texture.get_width()*log.scale.x)/2:
-				log.queue_free()
-				middle_logs.erase(log)
-		else:
-			log.position.x -= middle_vel*delta
-			if log.position.x > 5000 + (log.texture.get_width()*log.scale.x)/2:
-				log.queue_free()
-				middle_logs.erase(log)
-	for log in bottom_logs:
-		if dir:
-			log.position.x -= bottom_vel*delta
-			if log.position.x < -5000 - (log.texture.get_width()*log.scale.x)/2:
-				log.queue_free()
-				bottom_logs.erase(log)
-		else:
-			log.position.x += bottom_vel*delta
-			if log.position.x > 5000 + (log.texture.get_width()*log.scale.x)/2:
-				log.queue_free()
-				bottom_logs.erase(log)
+		for log in logs[i]:
+			if dir != i%2:
+				log.position.x -= vel[i]*delta
+				if log.position.x+50 < -(log.texture.get_width()*log.scale.x)/2:
+					log.queue_free()
+					logs[i].erase(log)
+			else:
+				log.position.x += vel[i]*delta
+				if log.position.x-50 > 10000 + (log.texture.get_width()*log.scale.x)/2:
+					log.queue_free()
+					logs[i].erase(log)
+		next[i] -= delta
 	
-	top_next -= delta
-	middle_next -= delta
-	bottom_next -= delta
-	
-	if global_position.y > 750:
+	if global_position.y > 700:
 		for i in get_children():
 			i.free()
 		self.free()

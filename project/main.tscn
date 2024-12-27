@@ -245,7 +245,7 @@ script = ExtResource("1_j8g8f")
 
 [node name="Left" type="ColorRect" parent="."]
 top_level = true
-z_index = 4
+z_index = 6
 offset_top = -176.0
 offset_right = 326.0
 offset_bottom = 824.0
@@ -253,7 +253,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Right" type="ColorRect" parent="."]
 top_level = true
-z_index = 4
+z_index = 6
 offset_left = 826.0
 offset_top = -176.0
 offset_right = 1152.0
@@ -276,7 +276,10 @@ position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_dsnyu")
 
 [node name="River" parent="." instance=ExtResource("31_q3esx")]
-position = Vector2(576, 396.7)
+offset_left = 326.0
+offset_top = 306.0
+offset_right = 1946.0
+offset_bottom = 1490.0
 
 [node name="Grass" parent="." instance=ExtResource("32_pa55l")]
 position = Vector2(576, 566.75)
@@ -293,7 +296,7 @@ position = Vector2(576, -54.034)
 
 [node name="Start" type="Node2D" parent="."]
 top_level = true
-z_index = 7
+z_index = 9
 
 [node name="ColorRect" type="ColorRect" parent="Start"]
 offset_right = 1152.0
@@ -325,7 +328,7 @@ text = "Play Game"
 [node name="End" type="Node2D" parent="."]
 visible = false
 top_level = true
-z_index = 5
+z_index = 7
 
 [node name="ColorRect" type="ColorRect" parent="End"]
 offset_right = 1152.0
@@ -339,16 +342,25 @@ texture = ExtResource("38_s2m30")
 
 [node name="Frog" type="Sprite2D" parent="End"]
 texture_filter = 1
-position = Vector2(576, 429)
+position = Vector2(576, 389)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("9_x6ipw")
+
+[node name="Button" type="Button" parent="End"]
+offset_left = 444.0
+offset_top = 532.0
+offset_right = 708.0
+offset_bottom = 573.0
+theme_override_fonts/font = ExtResource("37_ujkdl")
+theme_override_font_sizes/font_size = 32
+text = "Play Again?"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Score" type="Label" parent="."]
 top_level = true
-z_index = 6
+z_index = 8
 offset_left = 919.0
 offset_top = 11.0
 offset_right = 1142.0
@@ -363,5 +375,7 @@ horizontal_alignment = 2
 [connection signal="started" from="." to="Start/Frog" method="_on_started"]
 [connection signal="animation_finished" from="Frog" to="Frog" method="_on_animation_finished"]
 [connection signal="ended" from="Frog" to="." method="_on_frog_ended"]
+[connection signal="scroll_screen" from="Frog" to="." method="_scroll_screen"]
 [connection signal="pressed" from="Start/Button" to="." method="_start_game"]
+[connection signal="pressed" from="End/Button" to="." method="_restart_game"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
