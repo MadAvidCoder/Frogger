@@ -14,6 +14,11 @@ var needs_grass = false
 @onready var short_log = preload("res://short_log.tscn")
 @onready var long_log = preload("res://long_log.tscn")
 
+func _ready() -> void:
+	$Shop.hide()
+	$End.hide()
+	$Start.show()
+
 func _process(delta: float) -> void:
 	if scroll:
 		if next <= 0:
