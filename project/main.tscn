@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://0olp874htmvd"]
+[gd_scene load_steps=66 format=3 uid="uid://0olp874htmvd"]
 
 [ext_resource type="Texture2D" uid="uid://b4mnluv5lxqn6" path="res://assets/sprites/frog/forward/jump_0.png" id="1_g63w2"]
 [ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_j8g8f"]
@@ -307,6 +307,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pau84"]
+size = Vector2(72.7273, 70)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dv1ry"]
 animations = [{
 "frames": [{
@@ -392,7 +395,7 @@ script = ExtResource("51_wqeh6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rabbit/Rabbit_Area"]
 position = Vector2(0, -2)
 scale = Vector2(0.25, 0.25)
-shape = SubResource("RectangleShape2D_dsnyu")
+shape = SubResource("RectangleShape2D_pau84")
 
 [node name="River" parent="." instance=ExtResource("31_q3esx")]
 offset_left = 326.0
@@ -564,6 +567,7 @@ theme_override_fonts/font = ExtResource("37_ujkdl")
 theme_override_font_sizes/font_size = 60
 text = "0"
 horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="started" from="." to="Frog" method="_on_started"]
 [connection signal="started" from="." to="Rabbit" method="_on_started"]
