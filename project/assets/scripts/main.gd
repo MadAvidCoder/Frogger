@@ -8,6 +8,7 @@ var begun = false
 var needs_grass = false
 var http
 var http_response = ""
+var char_sel = 0
 var columns = ["id","username","password","has_password","coins","high_score","skins"]
 
 @onready var grass = preload("res://grass.tscn")
@@ -21,6 +22,9 @@ func _ready() -> void:
 	$Shop.hide()
 	$End.hide()
 	$Start.show()
+	get_tree().call_group("Frog", "show")
+	get_tree().call_group("Rabbit", "hide")
+	
 	http = HTTPRequest.new()
 	add_child(http)
 	http.request_completed.connect(self._http_request_completed)
@@ -96,8 +100,13 @@ func _process(delta: float) -> void:
 		position.y += delta*30
 		next -= delta*30
 		
-	if not begun and Input.is_action_just_pressed("start"):
-		_start_game()
+	if not begun:
+		if Input.is_action_just_pressed("start"):
+			_start_game()
+		elif Input.is_action_just_pressed("right"):
+			_on_arrow_right_pressed()
+		elif Input.is_action_just_pressed("left"):
+			_on_arrow_left_pressed()
 	elif $End.visible == true and Input.is_action_just_pressed("start"):
 		_restart_game()
 	
@@ -111,7 +120,14 @@ func _start_game() -> void:
 	begun = true
 	$Start.hide()
 	$End.hide()
-	started.emit("rabbit")
+	if char_sel == 0:
+		started.emit("frog")
+		get_tree().call_group("Frog", "show")
+		get_tree().call_group("Rabbit", "hide")
+	elif char_sel == 1:
+		started.emit("rabbit")
+		get_tree().call_group("Frog", "hide")
+		get_tree().call_group("Rabbit", "show")
 	scroll = true
 	$Start.queue_free()
 
@@ -124,3 +140,25 @@ func _on_timer_timeout() -> void:
 
 func _restart_game() -> void:
 	get_tree().reload_current_scene()
+
+func _on_arrow_left_pressed() -> void:
+	char_sel -= 1
+	if char_sel == -1:
+		char_sel = 1
+	if char_sel == 0:
+		get_tree().call_group("Frog", "show")
+		get_tree().call_group("Rabbit", "hide")
+	elif char_sel == 1:
+		get_tree().call_group("Frog", "hide")
+		get_tree().call_group("Rabbit", "show")
+
+func _on_arrow_right_pressed() -> void:
+	char_sel += 1
+	if char_sel == 2:
+		char_sel = 0
+	if char_sel == 0:
+		get_tree().call_group("Frog", "show")
+		get_tree().call_group("Rabbit", "hide")
+	if char_sel == 1:
+		get_tree().call_group("Frog", "hide")
+		get_tree().call_group("Rabbit", "show")
