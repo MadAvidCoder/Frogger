@@ -5,6 +5,9 @@ var http_response: String = ""
 const columns: Array[String] = ["id","username","password","has_password","coins","high_score","skins"]
 var user: String = ""
 var skin: int = 0
+var coins
+var high_score
+var skins = []
 
 func _ready() -> void:
 	http = HTTPRequest.new()
@@ -20,12 +23,12 @@ func new_user(username: String, password: String = "") -> void:
 func edit_user(username: String, column: String, value: Variant) -> void:
 	await http_request("https://froggerapi.madavidcoder.hackclub.app/?new=false&username=%s&column=%s&value=%s" % [username,column,value],"post")
 
-func get_all_users() -> Array[String]:
+func get_all_users() -> PackedStringArray:
 	var resp = await http_request("https://froggerapi.madavidcoder.hackclub.app/?all=true","get")
-	resp = resp.split(", ")
+	resp = resp.split(",")
 	return resp
 
-func get_user_info(username: String, column: String = "") -> Array[String]:
+func get_user_info(username: String, column: String = "") -> Variant:
 	var resp = await http_request("https://froggerapi.madavidcoder.hackclub.app/?username=%s" % username,"get")
 	while "'" in resp:
 		resp = resp.replace("'","")
