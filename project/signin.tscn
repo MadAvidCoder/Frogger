@@ -212,5 +212,7 @@ keep_title_visible = false
 
 [connection signal="pressed" from="NoAccount/Button" to="." method="_on_no_account_button_pressed"]
 [connection signal="pressed" from="HasAccount/Button" to="." method="_on_has_account_button_pressed"]
+[connection signal="text_changed" from="Username" to="." method="_username_validate_text"]
+[connection signal="text_changed" from="Password" to="." method="_password_validate_text"]
 [connection signal="pressed" from="SignInButton" to="." method="_on_sign_in"]
 [connection signal="pressed" from="CreateAccountButton" to="." method="_on_create_account"]

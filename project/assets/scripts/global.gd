@@ -2,17 +2,18 @@ extends Node2D
 
 var http
 var http_response: String = ""
-const columns: Array[String] = ["id","username","password","has_password","coins","high_score","skins"]
+const columns: PackedStringArray = ["id","username","password","has_password","coins","high_score","skins"]
 var user: String = ""
 var skin: int = 0
-var coins
-var high_score
+var coins: int
+var high_score: int
 var skins = []
 
 func _ready() -> void:
 	http = HTTPRequest.new()
 	add_child(http)
 	http.request_completed.connect(self._http_request_completed)
+	http.use_threads = true
 
 func new_user(username: String, password: String = "") -> void:
 	if password:

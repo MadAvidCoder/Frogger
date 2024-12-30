@@ -1,11 +1,13 @@
 extends Node2D
 
-var top = -114.034
-var next = 0
+var top: float = -114.034
+var next: float = 0
 signal started(character)
-var scroll = false
-var begun = false
-var needs_grass = false
+var scroll: bool = false
+var begun: bool = false
+var needs_grass: bool = false
+var restart = false
+var waiting = false
 
 @onready var grass = preload("res://grass.tscn")
 @onready var river = preload("res://river.tscn")
@@ -22,12 +24,15 @@ func _ready() -> void:
 	if Global.skin == 0:
 		get_tree().call_group("Frog", "show")
 		get_tree().call_group("Rabbit", "hide")
+		get_tree().call_group("Squirrel", "hide")
 	elif Global.skin == 1:
 		get_tree().call_group("Frog", "hide")
 		get_tree().call_group("Rabbit", "show")
+		get_tree().call_group("Squirrel", "hide")
 	elif Global.skin == 2:
 		get_tree().call_group("Frog", "hide")
 		get_tree().call_group("Rabbit", "hide")
+		get_tree().call_group("Squirrel", "show")
 	if Global.user != "":
 		$Start/Button.text = "Play Game"
 		$Start/Arrow_Left.show()
@@ -73,7 +78,7 @@ func _process(delta: float) -> void:
 		position.y += delta*30
 		next -= delta*30
 		
-	if not begun:
+	if not begun and not $Loading.visible:
 		if Input.is_action_just_pressed("start"):
 			_start_game()
 		elif Input.is_action_just_pressed("right") and Global.user != "":
@@ -89,48 +94,53 @@ func _scroll_screen(amount: Variant) -> void:
 		next -= amount
 
 func _start_game() -> void:
-	if Global.user == "":
-		$Signin.show()
-		$Start.hide()
-	elif $Signin.visible:
-		pass
-	else:
-		if $Start/Button.text == "Play Game":
-			begun = true
+	if not $Loading.visible:
+		if Global.user == "":
+			$Signin.show()
 			$Start.hide()
-			$End.hide()
-			if Global.skin == 0:
-				started.emit("frog")
-				get_tree().call_group("Frog", "show")
-				get_tree().call_group("Rabbit", "hide")
-				get_tree().call_group("Squirrel", "hide")
-			elif Global.skin == 1:
-				started.emit("rabbit")
-				get_tree().call_group("Frog", "hide")
-				get_tree().call_group("Rabbit", "show")
-				get_tree().call_group("Squirrel", "hide")
-			elif Global.skin == 2:
-				started.emit("squirrel")
-				get_tree().call_group("Frog", "hide")
-				get_tree().call_group("Rabbit", "hide")
-				get_tree().call_group("Squirrel", "show")
-			scroll = true
-			$Start.queue_free()
+		elif $Signin.visible:
+			pass
 		else:
-			if not $Start/Button.disabled:
-				if Global.skin == 1:
-					Global.coins -= 500
-					Global.skins.append("rabbit")
-					await Global.edit_user(Global.user, "coins", Global.coins)
-					await Global.edit_user(Global.user, "skins", ",".join(Global.skins))
+			if $Start/Button.text == "Play Game":
+				begun = true
+				$Start.hide()
+				$End.hide()
+				if Global.skin == 0:
+					started.emit("frog")
+					get_tree().call_group("Frog", "show")
+					get_tree().call_group("Rabbit", "hide")
+					get_tree().call_group("Squirrel", "hide")
+				elif Global.skin == 1:
+					started.emit("rabbit")
+					get_tree().call_group("Frog", "hide")
+					get_tree().call_group("Rabbit", "show")
+					get_tree().call_group("Squirrel", "hide")
 				elif Global.skin == 2:
-					Global.coins -= 1000
-					Global.skins.append("squirrel")
-					await Global.edit_user(Global.user, "coins", Global.coins)
-					await Global.edit_user(Global.user, "skins", ",".join(Global.skins))
-				$Start/Button.disabled = false
-				$Start/Coins.text = str(Global.coins)
-				$Start/Button.text = "Play Game"
+					started.emit("squirrel")
+					get_tree().call_group("Frog", "hide")
+					get_tree().call_group("Rabbit", "hide")
+					get_tree().call_group("Squirrel", "show")
+				scroll = true
+				$Start.queue_free()
+			else:
+				if not $Start/Button.disabled:
+					$Loading.show()
+					$Loading/Circle.play()
+					if Global.skin == 1:
+						Global.coins -= 500
+						Global.skins.append("rabbit")
+						await Global.edit_user(Global.user, "coins", Global.coins)
+						await Global.edit_user(Global.user, "skins", ",".join(Global.skins))
+					elif Global.skin == 2:
+						Global.coins -= 1000
+						Global.skins.append("squirrel")
+						await Global.edit_user(Global.user, "coins", Global.coins)
+						await Global.edit_user(Global.user, "skins", ",".join(Global.skins))
+					$Start/Button.disabled = false
+					$Start/Coins.text = str(Global.coins)
+					$Start/Button.text = "Play Game"
+					$Loading.hide()
+					$Loading/Circle.stop()
 
 func _on_frog_ended() -> void:
 	$Timer.start()
@@ -144,83 +154,92 @@ func _on_timer_timeout() -> void:
 		Global.high_score = int($High_Score.text)
 	Global.coins += int($Score.text)
 	await Global.edit_user(Global.user, "coins", Global.coins)
+	restart = true
+	if waiting: _restart_game()
 
 func _restart_game() -> void:
-	get_tree().reload_current_scene()
+	if restart:
+		get_tree().reload_current_scene()
+	else:
+		waiting = true
+		$Loading.show()
+		$Loading/Circle.play()
 
 func _on_arrow_left_pressed() -> void:
-	Global.skin -= 1
-	if Global.skin == -1:
-		Global.skin = 2
-	if Global.skin == 0:
-		get_tree().call_group("Frog", "show")
-		get_tree().call_group("Rabbit", "hide")
-		get_tree().call_group("Squirrel", "hide")
-		$Start/Button.text = "Play Game"
-		$Start/Button.disabled = false
-	elif Global.skin == 1:
-		get_tree().call_group("Frog", "hide")
-		get_tree().call_group("Rabbit", "show")
-		get_tree().call_group("Squirrel", "hide")
-		if "rabbit" in Global.skins:
+	if not $Loading.visible:
+		Global.skin -= 1
+		if Global.skin == -1:
+			Global.skin = 2
+		if Global.skin == 0:
+			get_tree().call_group("Frog", "show")
+			get_tree().call_group("Rabbit", "hide")
+			get_tree().call_group("Squirrel", "hide")
 			$Start/Button.text = "Play Game"
 			$Start/Button.disabled = false
-		else:
-			$Start/Button.text = "500 Coins"
-			if Global.coins < 500:
-				$Start/Button.disabled = true
-			else:
+		elif Global.skin == 1:
+			get_tree().call_group("Frog", "hide")
+			get_tree().call_group("Rabbit", "show")
+			get_tree().call_group("Squirrel", "hide")
+			if "rabbit" in Global.skins:
+				$Start/Button.text = "Play Game"
 				$Start/Button.disabled = false
-	elif Global.skin == 2:
-		get_tree().call_group("Frog", "hide")
-		get_tree().call_group("Rabbit", "hide")
-		get_tree().call_group("Squirrel", "show")
-		if "squirrel" in Global.skins:
-			$Start/Button.text = "Play Game"
-			$Start/Button.disabled = false
-		else:
-			$Start/Button.text = "1000 Coins"
-			if Global.coins < 1000:
-				$Start/Button.disabled = true
 			else:
+				$Start/Button.text = "500 Coins"
+				if Global.coins < 500:
+					$Start/Button.disabled = true
+				else:
+					$Start/Button.disabled = false
+		elif Global.skin == 2:
+			get_tree().call_group("Frog", "hide")
+			get_tree().call_group("Rabbit", "hide")
+			get_tree().call_group("Squirrel", "show")
+			if "squirrel" in Global.skins:
+				$Start/Button.text = "Play Game"
 				$Start/Button.disabled = false
+			else:
+				$Start/Button.text = "1000 Coins"
+				if Global.coins < 1000:
+					$Start/Button.disabled = true
+				else:
+					$Start/Button.disabled = false
 
 func _on_arrow_right_pressed() -> void:
-	Global.skin += 1
-	if Global.skin == 3:
-		Global.skin = 0
-	if Global.skin == 0:
-		get_tree().call_group("Frog", "show")
-		get_tree().call_group("Rabbit", "hide")
-		get_tree().call_group("Squirrel", "hide")
-		$Start/Button.text = "Play Game"
-		$Start/Button.disabled = false
-	elif Global.skin == 1:
-		get_tree().call_group("Frog", "hide")
-		get_tree().call_group("Rabbit", "show")
-		get_tree().call_group("Squirrel", "hide")
-		if "rabbit" in Global.skins:
+	if not $Loading.visible:
+		Global.skin += 1
+		if Global.skin == 3:
+			Global.skin = 0
+		if Global.skin == 0:
+			get_tree().call_group("Frog", "show")
+			get_tree().call_group("Rabbit", "hide")
+			get_tree().call_group("Squirrel", "hide")
 			$Start/Button.text = "Play Game"
 			$Start/Button.disabled = false
-		else:
-			$Start/Button.text = "500 Coins"
-			if Global.coins < 500:
-				$Start/Button.disabled = true
-			else:
+		elif Global.skin == 1:
+			get_tree().call_group("Frog", "hide")
+			get_tree().call_group("Rabbit", "show")
+			get_tree().call_group("Squirrel", "hide")
+			if "rabbit" in Global.skins:
+				$Start/Button.text = "Play Game"
 				$Start/Button.disabled = false
-	elif Global.skin == 2:
-		get_tree().call_group("Frog", "hide")
-		get_tree().call_group("Rabbit", "hide")
-		get_tree().call_group("Squirrel", "show")
-		if "squirrel" in Global.skins:
-			$Start/Button.text = "Play Game"
-			$Start/Button.disabled = false
-		else:
-			$Start/Button.text = "1000 Coins"
-			if Global.coins < 1000:
-				$Start/Button.disabled = true
 			else:
+				$Start/Button.text = "500 Coins"
+				if Global.coins < 500:
+					$Start/Button.disabled = true
+				else:
+					$Start/Button.disabled = false
+		elif Global.skin == 2:
+			get_tree().call_group("Frog", "hide")
+			get_tree().call_group("Rabbit", "hide")
+			get_tree().call_group("Squirrel", "show")
+			if "squirrel" in Global.skins:
+				$Start/Button.text = "Play Game"
 				$Start/Button.disabled = false
+			else:
+				$Start/Button.text = "1000 Coins"
+				if Global.coins < 1000:
+					$Start/Button.disabled = true
+				else:
+					$Start/Button.disabled = false
 
 func _on_signin_authenticated() -> void:
 	$Start/Arrow_Left.show()
@@ -239,3 +258,5 @@ func _on_signin_authenticated() -> void:
 	$Start.show()
 	$Signin.hide()
 	$Signin._on_has_account_button_pressed()
+	$Loading.hide()
+	$Loading/Circle.stop()

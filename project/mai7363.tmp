@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://0olp874htmvd"]
+[gd_scene load_steps=104 format=3 uid="uid://0olp874htmvd"]
 
 [ext_resource type="Texture2D" uid="uid://b4mnluv5lxqn6" path="res://assets/sprites/frog/forward/jump_0.png" id="1_g63w2"]
 [ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_j8g8f"]
@@ -63,8 +63,6 @@
 [ext_resource type="PackedScene" uid="uid://c33j6w0ksj702" path="res://signin.tscn" id="56_nykxa"]
 [ext_resource type="Texture2D" uid="uid://di3njjk6xh17f" path="res://assets/arrow.png" id="58_mgfno"]
 [ext_resource type="BitMap" uid="uid://briqpar380c6v" path="res://assets/arrow_mask.bmp" id="59_e0si5"]
-[ext_resource type="Texture2D" uid="uid://ro78lqr2go6h" path="res://assets/sprites/squirrel/squirrel_dead.png" id="64_kvexc"]
-[ext_resource type="Texture2D" uid="uid://0pius3nhgqjd" path="res://assets/loading_sheet.png" id="65_xil5k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a28tb"]
 animations = [{
@@ -629,174 +627,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7vmi"]
-atlas = ExtResource("53_61knq")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4chx"]
-atlas = ExtResource("53_61knq")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cpa8g"]
-atlas = ExtResource("53_61knq")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysglo"]
-atlas = ExtResource("53_61knq")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5kdea"]
-atlas = ExtResource("53_61knq")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jo06q"]
-atlas = ExtResource("53_61knq")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3v45s"]
-atlas = ExtResource("53_61knq")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c68fy"]
-atlas = ExtResource("53_61knq")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4ctt3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p7vmi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4chx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cpa8g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysglo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p7vmi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5kdea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jo06q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3v45s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c68fy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4chx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cpa8g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysglo")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfbbe"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(0, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jru8o"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(512, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxpgj"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1024, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1tlr"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1536, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85giv"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(0, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_agte2"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(512, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gceqv"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1024, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fu6eh"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1536, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jcs5"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(0, 1024, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5hcw"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(512, 1024, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqpgw"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1024, 1024, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uv760"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1536, 1024, 512, 512)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jnbqk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mfbbe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jru8o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxpgj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f1tlr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85giv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_agte2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gceqv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fu6eh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5jcs5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u5hcw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mqpgw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uv760")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j8g8f")
 
@@ -835,7 +665,6 @@ position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_dsnyu")
 
 [node name="Rabbit" type="AnimatedSprite2D" parent="." groups=["Player", "Rabbit"]]
-visible = false
 z_index = 1
 texture_filter = 1
 position = Vector2(576, 584.7)
@@ -856,10 +685,10 @@ shape = SubResource("RectangleShape2D_pau84")
 [node name="Squirrel" type="AnimatedSprite2D" parent="." groups=["Player", "Squirrel"]]
 z_index = 1
 texture_filter = 1
-position = Vector2(576, 584.7)
+position = Vector2(621, 584.7)
 scale = Vector2(2.04, 2.04)
 sprite_frames = SubResource("SpriteFrames_8voh4")
-animation = &"dead"
+animation = &"forward_stationary"
 autoplay = "forward_stationary"
 offset = Vector2(0, -5)
 script = ExtResource("54_e5frh")
@@ -925,15 +754,6 @@ position = Vector2(576, 355)
 scale = Vector2(3.9, 3.9)
 texture = ExtResource("40_43ima")
 offset = Vector2(0, -4)
-
-[node name="Squirrel_Start" type="AnimatedSprite2D" parent="Start" groups=["Player", "Squirrel"]]
-visible = false
-texture_filter = 1
-position = Vector2(576, 355)
-scale = Vector2(5.53, 5.53)
-sprite_frames = SubResource("SpriteFrames_4ctt3")
-autoplay = "default"
-offset = Vector2(-1.555, -2.565)
 
 [node name="Arrow_Left" type="TextureButton" parent="Start"]
 offset_left = 432.0
@@ -1007,6 +827,7 @@ text_overrun_behavior = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="End" type="Node2D" parent="."]
+visible = false
 top_level = true
 z_index = 7
 
@@ -1021,26 +842,18 @@ scale = Vector2(0.55, 0.55)
 texture = ExtResource("38_s2m30")
 
 [node name="Frog_End" type="Sprite2D" parent="End" groups=["Frog", "Player"]]
+visible = false
 texture_filter = 1
 position = Vector2(576, 389)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("9_x6ipw")
 
-[node name="Rabbit_End" type="Sprite2D" parent="End" groups=["Player", "Rabbit"]]
-visible = false
+[node name="Rabbit_Start" type="Sprite2D" parent="End" groups=["Player", "Rabbit"]]
 texture_filter = 1
 position = Vector2(576, 353)
 scale = Vector2(3.9, 3.9)
 texture = ExtResource("36_yqfhq")
 offset = Vector2(0, -4)
-
-[node name="Squirrel_End" type="Sprite2D" parent="End" groups=["Player", "Squirrel"]]
-visible = false
-texture_filter = 1
-position = Vector2(576, 389)
-scale = Vector2(6.725, 6.725)
-texture = ExtResource("64_kvexc")
-offset = Vector2(0, -4.875)
 
 [node name="Button" type="Button" parent="End"]
 offset_left = 444.0
@@ -1094,33 +907,8 @@ theme_override_font_sizes/font_size = 40
 text = "HS"
 metadata/_edit_use_anchors_ = true
 
-[node name="Loading" type="Node2D" parent="."]
-visible = false
-top_level = true
-z_index = 11
-
-[node name="ColorRect" type="ColorRect" parent="Loading"]
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 0.498039)
-
-[node name="Circle" type="AnimatedSprite2D" parent="Loading"]
-position = Vector2(576, 320)
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_jnbqk")
-
-[node name="Text" type="Label" parent="Loading"]
-offset_left = 480.0
-offset_top = 421.0
-offset_right = 673.0
-offset_bottom = 460.0
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 38
-text = "Loading"
-
 [connection signal="started" from="." to="Frog" method="_on_started"]
 [connection signal="started" from="." to="Rabbit" method="_on_started"]
-[connection signal="started" from="." to="Squirrel" method="_on_started"]
 [connection signal="animation_finished" from="Frog" to="Frog" method="_on_animation_finished"]
 [connection signal="ended" from="Frog" to="." method="_on_frog_ended"]
 [connection signal="scroll_screen" from="Frog" to="." method="_scroll_screen"]

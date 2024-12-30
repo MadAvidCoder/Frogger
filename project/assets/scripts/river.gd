@@ -92,17 +92,17 @@ func _process(delta: float) -> void:
 					next[i] = randf_range(1,2.5)+2800/vel[i]
 				logs[i].append(new)
 	
-		for log in logs[i]:
+		for item in logs[i]:
 			if dir != i%2:
-				log.position.x -= vel[i]*delta
-				if log.position.x+50 < -(log.texture.get_width()*log.scale.x)/2:
-					log.queue_free()
-					logs[i].erase(log)
+				item.position.x -= vel[i]*delta
+				if item.position.x+50 < -(item.texture.get_width()*item.scale.x)/2:
+					item.queue_free()
+					logs[i].erase(item)
 			else:
-				log.position.x += vel[i]*delta
-				if log.position.x-50 > 10000 + (log.texture.get_width()*log.scale.x)/2:
-					log.queue_free()
-					logs[i].erase(log)
+				item.position.x += vel[i]*delta
+				if item.position.x-50 > 10000 + (item.texture.get_width()*item.scale.x)/2:
+					item.queue_free()
+					logs[i].erase(item)
 		next[i] -= delta
 	
 	if global_position.y > 700:
