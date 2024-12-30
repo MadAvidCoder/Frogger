@@ -1,0 +1,218 @@
+[gd_scene load_steps=5 format=3 uid="uid://c33j6w0ksj702"]
+
+[ext_resource type="Script" path="res://signin.gd" id="1_2b5vq"]
+[ext_resource type="Texture2D" uid="uid://ckweqll8ighop" path="res://assets/text/signin.png" id="1_olvht"]
+[ext_resource type="Texture2D" uid="uid://br168x0y6erbx" path="res://assets/text/create.png" id="2_5m2dh"]
+[ext_resource type="FontFile" uid="uid://dppkd7fmvp2hr" path="res://assets/text/font.ttf" id="4_k4o3v"]
+
+[node name="Signin" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2b5vq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="SignIn" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.0
+offset_top = 26.0
+offset_right = 296.0
+offset_bottom = 193.0
+grow_horizontal = 2
+scale = Vector2(0.77, 0.77)
+pivot_offset = Vector2(296, 0)
+texture = ExtResource("1_olvht")
+
+[node name="CreateAccount" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -592.5
+offset_top = 26.0
+offset_right = 592.5
+offset_bottom = 193.0
+grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(592, 0)
+texture = ExtResource("2_5m2dh")
+
+[node name="NoAccount" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -196.5
+offset_top = 188.0
+offset_right = 196.5
+offset_bottom = 218.0
+grow_horizontal = 2
+
+[node name="Text" type="Label" parent="NoAccount"]
+layout_mode = 0
+offset_right = 109.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 24
+text = "No Account?"
+
+[node name="Button" type="LinkButton" parent="NoAccount"]
+layout_mode = 0
+offset_left = 203.0
+offset_right = 395.0
+offset_bottom = 40.0
+theme_override_constants/underline_spacing = 2
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 24
+text = "Create One!"
+
+[node name="HasAccount" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -216.0
+offset_top = 191.0
+offset_right = 216.0
+offset_bottom = 215.0
+grow_horizontal = 2
+
+[node name="Text" type="Label" parent="HasAccount"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 155.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 24
+text = "Have an Account?"
+
+[node name="Button" type="LinkButton" parent="HasAccount"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = -3.0
+offset_right = 432.0
+offset_bottom = 37.0
+theme_override_constants/underline_spacing = 2
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 24
+text = "Sign In!"
+
+[node name="UsernameText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 379.5
+offset_top = 262.0
+offset_right = 588.5
+offset_bottom = 295.0
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 32
+text = "Username:"
+
+[node name="Username" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 304.0
+offset_right = 766.0
+offset_bottom = 343.0
+theme_override_font_sizes/font_size = 22
+max_length = 16
+drag_and_drop_selection_enabled = false
+caret_blink = true
+
+[node name="PasswordText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 379.5
+offset_top = 394.0
+offset_right = 588.5
+offset_bottom = 427.0
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 32
+text = "Password:"
+
+[node name="Password" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 434.0
+offset_right = 766.0
+offset_bottom = 473.0
+theme_override_font_sizes/font_size = 22
+max_length = 50
+virtual_keyboard_type = 6
+drag_and_drop_selection_enabled = false
+caret_blink = true
+secret = true
+
+[node name="PasswordDisclaimer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 479.0
+offset_right = 769.0
+offset_bottom = 516.0
+theme_override_font_sizes/font_size = 12
+text = "DISCLAIMER: Username and password will be stored in an unsecured database. A unique password is strongly recommended."
+autowrap_mode = 3
+
+[node name="SignInButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -85.0
+offset_right = 75.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 28
+text = "Sign In"
+
+[node name="CreateAccountButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -146.5
+offset_top = -85.0
+offset_right = 146.5
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 28
+text = "Create Account"
+
+[node name="AlertDialog" type="AcceptDialog" parent="."]
+title = "Error"
+position = Vector2i(471, 277)
+size = Vector2i(210, 94)
+unresizable = true
+borderless = true
+popup_window = true
+keep_title_visible = false
+
+[connection signal="pressed" from="NoAccount/Button" to="." method="_on_no_account_button_pressed"]
+[connection signal="pressed" from="HasAccount/Button" to="." method="_on_has_account_button_pressed"]
+[connection signal="text_changed" from="Username" to="." method="_username_validate_text"]
+[connection signal="text_changed" from="Password" to="." method="_password_validate_text"]
+[connection signal="pressed" from="SignInButton" to="." method="_on_sign_in"]
+[connection signal="pressed" from="CreateAccountButton" to="." method="_on_create_account"]

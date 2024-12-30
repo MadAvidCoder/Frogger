@@ -4,7 +4,7 @@ signal scroll_screen(amount)
 var dir = ""
 var vel = 0
 var jump_vel = 60
-@onready var area = $Frog_Area
+@onready var area = $Squirrel_Area
 var started = false
 signal ended
 @onready var score = $"../Score"
@@ -96,5 +96,5 @@ func _on_animation_finished() -> void:
 		play("%s_stationary" % dir)
 
 func _on_started(character) -> void:
-	if character == "frog":
+	if character == "squirrel":
 		started = true

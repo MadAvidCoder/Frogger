@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://0olp874htmvd"]
+[gd_scene load_steps=104 format=3 uid="uid://0olp874htmvd"]
 
 [ext_resource type="Texture2D" uid="uid://b4mnluv5lxqn6" path="res://assets/sprites/frog/forward/jump_0.png" id="1_g63w2"]
 [ext_resource type="Script" path="res://assets/scripts/main.gd" id="1_j8g8f"]
@@ -63,9 +63,6 @@
 [ext_resource type="PackedScene" uid="uid://c33j6w0ksj702" path="res://signin.tscn" id="56_nykxa"]
 [ext_resource type="Texture2D" uid="uid://di3njjk6xh17f" path="res://assets/arrow.png" id="58_mgfno"]
 [ext_resource type="BitMap" uid="uid://briqpar380c6v" path="res://assets/arrow_mask.bmp" id="59_e0si5"]
-[ext_resource type="Texture2D" uid="uid://cyjmc2b3trjxf" path="res://assets/text/leaderboard.png" id="59_fbjwi"]
-[ext_resource type="Texture2D" uid="uid://ro78lqr2go6h" path="res://assets/sprites/squirrel/squirrel_dead.png" id="64_kvexc"]
-[ext_resource type="Texture2D" uid="uid://0pius3nhgqjd" path="res://assets/loading_sheet.png" id="65_xil5k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a28tb"]
 animations = [{
@@ -598,10 +595,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7d0iy"]
 size = Vector2(43.1373, 66.6666)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ic160"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alus6"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_dv1ry"]
 animations = [{
 "frames": [{
@@ -634,177 +627,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7vmi"]
-atlas = ExtResource("53_61knq")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q4chx"]
-atlas = ExtResource("53_61knq")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cpa8g"]
-atlas = ExtResource("53_61knq")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysglo"]
-atlas = ExtResource("53_61knq")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5kdea"]
-atlas = ExtResource("53_61knq")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jo06q"]
-atlas = ExtResource("53_61knq")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3v45s"]
-atlas = ExtResource("53_61knq")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c68fy"]
-atlas = ExtResource("53_61knq")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4ctt3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p7vmi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4chx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cpa8g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysglo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p7vmi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5kdea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jo06q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3v45s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c68fy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q4chx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cpa8g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysglo")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfbbe"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(0, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jru8o"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(512, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxpgj"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1024, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1tlr"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1536, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85giv"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(0, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_agte2"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(512, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gceqv"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1024, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fu6eh"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1536, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jcs5"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(0, 1024, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5hcw"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(512, 1024, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqpgw"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1024, 1024, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uv760"]
-atlas = ExtResource("65_xil5k")
-region = Rect2(1536, 1024, 512, 512)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_jnbqk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mfbbe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jru8o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxpgj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f1tlr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85giv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_agte2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gceqv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fu6eh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5jcs5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u5hcw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mqpgw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uv760")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_j8g8f")
-metadata/_edit_vertical_guides_ = [-531.0]
 
 [node name="Left" type="ColorRect" parent="."]
 top_level = true
@@ -841,7 +665,6 @@ position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_dsnyu")
 
 [node name="Rabbit" type="AnimatedSprite2D" parent="." groups=["Player", "Rabbit"]]
-visible = false
 z_index = 1
 texture_filter = 1
 position = Vector2(576, 584.7)
@@ -862,10 +685,10 @@ shape = SubResource("RectangleShape2D_pau84")
 [node name="Squirrel" type="AnimatedSprite2D" parent="." groups=["Player", "Squirrel"]]
 z_index = 1
 texture_filter = 1
-position = Vector2(576, 584.7)
+position = Vector2(621, 584.7)
 scale = Vector2(2.04, 2.04)
 sprite_frames = SubResource("SpriteFrames_8voh4")
-animation = &"dead"
+animation = &"forward_stationary"
 autoplay = "forward_stationary"
 offset = Vector2(0, -5)
 script = ExtResource("54_e5frh")
@@ -901,486 +724,8 @@ visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Leaderboard" type="Node2D" parent="."]
-visible = false
-z_index = 9
-
-[node name="ColorRect" type="ColorRect" parent="Leaderboard"]
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 1)
-
-[node name="LeaderboardText" type="Sprite2D" parent="Leaderboard"]
-position = Vector2(576, 87)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("59_fbjwi")
-
-[node name="Table" type="VBoxContainer" parent="Leaderboard"]
-offset_left = 576.0
-offset_top = 87.0
-offset_right = 616.0
-offset_bottom = 127.0
-
-[node name="Row1" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 187.0
-offset_right = 907.5
-offset_bottom = 227.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row1"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row1"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row1"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row1"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row1"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row2" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 227.0
-offset_right = 907.5
-offset_bottom = 267.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row2"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row2"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row2"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row2"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row2"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row3" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 267.0
-offset_right = 907.5
-offset_bottom = 307.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row3"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#3"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row3"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row3"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row3"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row3"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row4" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 307.0
-offset_right = 907.5
-offset_bottom = 347.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row4"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#4"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row4"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row4"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row4"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row4"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row5" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 347.0
-offset_right = 907.5
-offset_bottom = 387.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row5"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row5"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row5"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row5"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row5"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row6" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 387.0
-offset_right = 907.5
-offset_bottom = 427.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row6"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#6"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row6"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row6"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row6"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row6"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row7" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 427.0
-offset_right = 907.5
-offset_bottom = 467.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row7"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#7"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row7"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row7"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row7"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row7"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row8" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 467.0
-offset_right = 907.5
-offset_bottom = 507.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row8"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#8"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row8"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row8"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row8"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row8"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row9" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 507.0
-offset_right = 907.5
-offset_bottom = 547.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row9"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#9"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row9"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row9"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row9"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row9"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Row10" type="HBoxContainer" parent="Leaderboard"]
-offset_left = 244.5
-offset_top = 547.0
-offset_right = 907.5
-offset_bottom = 587.0
-
-[node name="Place" type="Label" parent="Leaderboard/Row10"]
-layout_mode = 2
-size_flags_horizontal = 2
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "#10"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VSeparator" type="VSeparator" parent="Leaderboard/Row10"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_ic160")
-
-[node name="Username" type="Label" parent="Leaderboard/Row10"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "Loading..."
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 15
-visible_ratio = 7.5
-
-[node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row10"]
-layout_mode = 2
-theme_override_constants/separation = 10
-theme_override_styles/separator = SubResource("StyleBoxEmpty_alus6")
-
-[node name="HighScore" type="Label" parent="Leaderboard/Row10"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 35
-text = "----"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BackButton" type="Button" parent="Leaderboard"]
-offset_left = 16.0
-offset_top = 13.0
-offset_right = 129.0
-offset_bottom = 54.0
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 32
-text = "Back"
-
 [node name="Start" type="Node2D" parent="."]
+visible = false
 top_level = true
 z_index = 9
 
@@ -1410,17 +755,7 @@ scale = Vector2(3.9, 3.9)
 texture = ExtResource("40_43ima")
 offset = Vector2(0, -4)
 
-[node name="Squirrel_Start" type="AnimatedSprite2D" parent="Start" groups=["Player", "Squirrel"]]
-visible = false
-texture_filter = 1
-position = Vector2(576, 355)
-scale = Vector2(5.53, 5.53)
-sprite_frames = SubResource("SpriteFrames_4ctt3")
-autoplay = "default"
-offset = Vector2(-1.555, -2.565)
-
 [node name="Arrow_Left" type="TextureButton" parent="Start"]
-visible = false
 offset_left = 432.0
 offset_top = 314.0
 offset_right = 1232.0
@@ -1434,7 +769,6 @@ texture_focused = ExtResource("58_mgfno")
 texture_click_mask = ExtResource("59_e0si5")
 
 [node name="Arrow_Right" type="TextureButton" parent="Start"]
-visible = false
 offset_left = 666.4
 offset_top = 314.0
 offset_right = 1466.4
@@ -1449,22 +783,13 @@ texture_click_mask = ExtResource("59_e0si5")
 flip_h = true
 
 [node name="Button" type="Button" parent="Start"]
-offset_left = 243.5
+offset_left = 455.5
 offset_top = 532.0
-offset_right = 484.5
+offset_right = 696.5
 offset_bottom = 573.0
 theme_override_fonts/font = ExtResource("37_ujkdl")
 theme_override_font_sizes/font_size = 32
 text = "Sign In"
-
-[node name="Leaderboard" type="Button" parent="Start"]
-offset_left = 663.5
-offset_top = 532.0
-offset_right = 938.5
-offset_bottom = 573.0
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 32
-text = "Leaderboard"
 
 [node name="Username" type="Label" parent="Start"]
 top_level = true
@@ -1517,26 +842,18 @@ scale = Vector2(0.55, 0.55)
 texture = ExtResource("38_s2m30")
 
 [node name="Frog_End" type="Sprite2D" parent="End" groups=["Frog", "Player"]]
+visible = false
 texture_filter = 1
 position = Vector2(576, 389)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("9_x6ipw")
 
-[node name="Rabbit_End" type="Sprite2D" parent="End" groups=["Player", "Rabbit"]]
-visible = false
+[node name="Rabbit_Start" type="Sprite2D" parent="End" groups=["Player", "Rabbit"]]
 texture_filter = 1
 position = Vector2(576, 353)
 scale = Vector2(3.9, 3.9)
 texture = ExtResource("36_yqfhq")
 offset = Vector2(0, -4)
-
-[node name="Squirrel_End" type="Sprite2D" parent="End" groups=["Player", "Squirrel"]]
-visible = false
-texture_filter = 1
-position = Vector2(576, 389)
-scale = Vector2(6.725, 6.725)
-texture = ExtResource("64_kvexc")
-offset = Vector2(0, -4.875)
 
 [node name="Button" type="Button" parent="End"]
 offset_left = 444.0
@@ -1590,33 +907,8 @@ theme_override_font_sizes/font_size = 40
 text = "HS"
 metadata/_edit_use_anchors_ = true
 
-[node name="Loading" type="Node2D" parent="."]
-visible = false
-top_level = true
-z_index = 11
-
-[node name="ColorRect" type="ColorRect" parent="Loading"]
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0, 0, 0, 0.498039)
-
-[node name="Circle" type="AnimatedSprite2D" parent="Loading"]
-position = Vector2(576, 320)
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_jnbqk")
-
-[node name="Text" type="Label" parent="Loading"]
-offset_left = 480.0
-offset_top = 421.0
-offset_right = 673.0
-offset_bottom = 460.0
-theme_override_fonts/font = ExtResource("37_ujkdl")
-theme_override_font_sizes/font_size = 38
-text = "Loading"
-
 [connection signal="started" from="." to="Frog" method="_on_started"]
 [connection signal="started" from="." to="Rabbit" method="_on_started"]
-[connection signal="started" from="." to="Squirrel" method="_on_started"]
 [connection signal="animation_finished" from="Frog" to="Frog" method="_on_animation_finished"]
 [connection signal="ended" from="Frog" to="." method="_on_frog_ended"]
 [connection signal="scroll_screen" from="Frog" to="." method="_scroll_screen"]
@@ -1627,10 +919,8 @@ text = "Loading"
 [connection signal="ended" from="Squirrel" to="." method="_on_frog_ended"]
 [connection signal="scroll_screen" from="Squirrel" to="." method="_scroll_screen"]
 [connection signal="authenticated" from="Signin" to="." method="_on_signin_authenticated"]
-[connection signal="pressed" from="Leaderboard/BackButton" to="." method="_close_leaderboard"]
 [connection signal="pressed" from="Start/Arrow_Left" to="." method="_on_arrow_left_pressed"]
 [connection signal="pressed" from="Start/Arrow_Right" to="." method="_on_arrow_right_pressed"]
 [connection signal="pressed" from="Start/Button" to="." method="_start_game"]
-[connection signal="pressed" from="Start/Leaderboard" to="." method="_show_leaderboard"]
 [connection signal="pressed" from="End/Button" to="." method="_restart_game"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

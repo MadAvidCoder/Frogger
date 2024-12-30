@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bundsotadavd1"]
 
-[ext_resource type="Texture2D" uid="uid://n42hn6syye0d" path="res://assets/backgrounds/grass.png" id="1_44n2o"]
+[ext_resource type="Texture2D" uid="uid://cvdyr61e0r4tk" path="res://assets/backgrounds/grass.png" id="1_44n2o"]
 [ext_resource type="Script" path="res://assets/scripts/grass.gd" id="2_2hgqf"]
 
 [node name="Grass" type="Sprite2D"]

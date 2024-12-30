@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://briqpar380c6v"
+path="res://.godot/imported/arrow_mask.bmp-813dea10e773b49243840634e19b3ac9.res"
+
+[deps]
+
+source_file="res://assets/arrow_mask.bmp"
+dest_files=["res://.godot/imported/arrow_mask.bmp-813dea10e773b49243840634e19b3ac9.res"]
+
+[params]
+
+create_from=0
+threshold=0.5
