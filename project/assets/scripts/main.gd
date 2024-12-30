@@ -260,3 +260,56 @@ func _on_signin_authenticated() -> void:
 	$Signin._on_has_account_button_pressed()
 	$Loading.hide()
 	$Loading/Circle.stop()
+
+func _show_leaderboard() -> void:
+	$Loading.show()
+	$Loading/Circle.play()
+	$Start.hide()
+	$Leaderboard.show()
+	var leaders = await Global.get_leaderboard()
+	$Leaderboard/Row1/Username.text = leaders[0][0]
+	$Leaderboard/Row1/HighScore.text = leaders[0][1]
+	$Leaderboard/Row2/Username.text = leaders[1][0]
+	$Leaderboard/Row2/HighScore.text = leaders[1][1]
+	$Leaderboard/Row3/Username.text = leaders[2][0]
+	$Leaderboard/Row3/HighScore.text = leaders[2][1]
+	$Leaderboard/Row4/Username.text = leaders[3][0]
+	$Leaderboard/Row4/HighScore.text = leaders[3][1]
+	$Leaderboard/Row5/Username.text = leaders[4][0]
+	$Leaderboard/Row5/HighScore.text = leaders[4][1]
+	$Leaderboard/Row6/Username.text = leaders[5][0]
+	$Leaderboard/Row6/HighScore.text = leaders[5][1]
+	$Leaderboard/Row7/Username.text = leaders[6][0]
+	$Leaderboard/Row7/HighScore.text = leaders[6][1]
+	$Leaderboard/Row8/Username.text = leaders[7][0]
+	$Leaderboard/Row8/HighScore.text = leaders[7][1]
+	$Leaderboard/Row9/Username.text = leaders[8][0]
+	$Leaderboard/Row9/HighScore.text = leaders[8][1]
+	$Leaderboard/Row10/Username.text = leaders[9][0]
+	$Leaderboard/Row10/HighScore.text = leaders[9][1]
+	$Loading.hide()
+	$Loading/Circle.stop()
+
+func _close_leaderboard() -> void:
+	$Start.show()
+	$Leaderboard.hide()
+	$Leaderboard/Row1/Username.text = "Loading..."
+	$Leaderboard/Row1/HighScore.text = "---"
+	$Leaderboard/Row2/Username.text = "Loading..."
+	$Leaderboard/Row2/HighScore.text = "---"
+	$Leaderboard/Row3/Username.text = "Loading..."
+	$Leaderboard/Row3/HighScore.text = "---"
+	$Leaderboard/Row4/Username.text = "Loading..."
+	$Leaderboard/Row4/HighScore.text = "---"
+	$Leaderboard/Row5/Username.text = "Loading..."
+	$Leaderboard/Row5/HighScore.text = "---"
+	$Leaderboard/Row6/Username.text = "Loading..."
+	$Leaderboard/Row6/HighScore.text = "---"
+	$Leaderboard/Row7/Username.text = "Loading..."
+	$Leaderboard/Row7/HighScore.text = "---"
+	$Leaderboard/Row8/Username.text = "Loading..."
+	$Leaderboard/Row8/HighScore.text = "---"
+	$Leaderboard/Row9/Username.text = "Loading..."
+	$Leaderboard/Row9/HighScore.text = "---"
+	$Leaderboard/Row10/Username.text = "Loading..."
+	$Leaderboard/Row10/HighScore.text = "---"

@@ -29,6 +29,13 @@ func get_all_users() -> PackedStringArray:
 	resp = resp.split(",")
 	return resp
 
+func get_leaderboard():
+	var resp = await http_request("https://froggerapi.madavidcoder.hackclub.app/?all=true&board=true","get")
+	resp = Array(resp.split(","))
+	for i in range(len(resp)):
+		resp[i] = resp[i].split(":")
+	return resp
+
 func get_user_info(username: String, column: String = "") -> Variant:
 	var resp = await http_request("https://froggerapi.madavidcoder.hackclub.app/?username=%s" % username,"get")
 	while "'" in resp:
