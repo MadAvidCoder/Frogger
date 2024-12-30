@@ -21,6 +21,7 @@ func _ready() -> void:
 	$Start.show()
 	$Start/Arrow_Left.hide()
 	$Start/Arrow_Right.hide()
+	$Start/Label.hide()
 	if Global.skin == 0:
 		get_tree().call_group("Frog", "show")
 		get_tree().call_group("Rabbit", "hide")
@@ -38,8 +39,18 @@ func _ready() -> void:
 		$Start/Arrow_Left.show()
 		$Start/Arrow_Right.show()
 		$Start/Username.text = Global.user
-		$Start/Coins.text = str(Global.coins)
+		$Start/Coins.text = str(Global.coins) + " Coins"
 		$High_Score.text = str(Global.high_score)
+		if not "rabbit" in Global.skins:
+			if not "squirrel" in Global.skins:
+				if Global.coins < 1500:
+					$Start/Label.show()
+			else:
+				if Global.coins < 500:
+					$Start/Label.show()
+		elif not "squirrel" in Global.skins:
+			if Global.coins < 1000:
+				$Start/Label.show()
 
 func _process(delta: float) -> void:
 	if scroll:
@@ -137,7 +148,7 @@ func _start_game() -> void:
 						await Global.edit_user(Global.user, "coins", Global.coins)
 						await Global.edit_user(Global.user, "skins", ",".join(Global.skins))
 					$Start/Button.disabled = false
-					$Start/Coins.text = str(Global.coins)
+					$Start/Coins.text = str(Global.coins) + " Coins"
 					$Start/Button.text = "Play Game"
 					$Loading.hide()
 					$Loading/Circle.stop()
@@ -260,6 +271,16 @@ func _on_signin_authenticated() -> void:
 	$Signin._on_has_account_button_pressed()
 	$Loading.hide()
 	$Loading/Circle.stop()
+	if not "rabbit" in Global.skins:
+		if not "squirrel" in Global.skins:
+			if Global.coins < 1500:
+				$Start/Label.show()
+		else:
+			if Global.coins < 500:
+				$Start/Label.show()
+	elif not "squirrel" in Global.skins:
+		if Global.coins < 1000:
+			$Start/Label.show()
 
 func _show_leaderboard() -> void:
 	$Loading.show()
@@ -313,3 +334,13 @@ func _close_leaderboard() -> void:
 	$Leaderboard/Row9/HighScore.text = "---"
 	$Leaderboard/Row10/Username.text = "Loading..."
 	$Leaderboard/Row10/HighScore.text = "---"
+
+func _get_free() -> void:
+	$Loading.show()
+	$Loading/Circle.play()
+	Global.coins += 1500
+	$Start/Coins.text = str(Global.coins) + " Coins"
+	await Global.edit_user(Global.user, "coins", Global.coins)
+	$Loading.hide()
+	$Loading/Circle.stop()
+	$Start/Label.hide()

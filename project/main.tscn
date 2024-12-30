@@ -949,8 +949,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row1"]
 layout_mode = 2
@@ -994,8 +992,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row2"]
 layout_mode = 2
@@ -1039,8 +1035,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row3"]
 layout_mode = 2
@@ -1084,8 +1078,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row4"]
 layout_mode = 2
@@ -1129,8 +1121,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row5"]
 layout_mode = 2
@@ -1174,8 +1164,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row6"]
 layout_mode = 2
@@ -1219,8 +1207,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row7"]
 layout_mode = 2
@@ -1264,8 +1250,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row8"]
 layout_mode = 2
@@ -1309,8 +1293,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 16
-visible_ratio = 1.23077
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row9"]
 layout_mode = 2
@@ -1354,8 +1336,6 @@ theme_override_font_sizes/font_size = 35
 text = "Loading..."
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 15
-visible_ratio = 7.5
 
 [node name="VSeparator2" type="VSeparator" parent="Leaderboard/Row10"]
 layout_mode = 2
@@ -1501,6 +1481,22 @@ theme_override_font_sizes/font_size = 30
 text_overrun_behavior = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Label" type="Label" parent="Start"]
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 201.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 18
+text = "Testing for High Seas?"
+
+[node name="LinkButton" type="LinkButton" parent="Start/Label"]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 134.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 18
+text = "Get 1500 Coins!"
+
 [node name="End" type="Node2D" parent="."]
 visible = false
 top_level = true
@@ -1632,5 +1628,6 @@ text = "Loading"
 [connection signal="pressed" from="Start/Arrow_Right" to="." method="_on_arrow_right_pressed"]
 [connection signal="pressed" from="Start/Button" to="." method="_start_game"]
 [connection signal="pressed" from="Start/Leaderboard" to="." method="_show_leaderboard"]
+[connection signal="pressed" from="Start/Label/LinkButton" to="." method="_get_free"]
 [connection signal="pressed" from="End/Button" to="." method="_restart_game"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
