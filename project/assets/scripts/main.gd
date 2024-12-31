@@ -261,8 +261,9 @@ func _on_signin_authenticated() -> void:
 		Global.skins = Global.skins.split(",")
 	else:
 		Global.skins = []
-	Global.coins = int(await Global.get_user_info(Global.user, "coins"))
-	Global.high_score = int(await Global.get_user_info(Global.user, "high_score"))
+	var resp = await Global.get_user_info(Global.user)
+	Global.coins = int(resp[Global.columns.find("coins")])
+	Global.high_score = int(resp[Global.columns.find("high_score")])
 	$Start/Coins.text = str(Global.coins) + " Coins"
 	$Start/Username.text = Global.user
 	$High_Score.text = str(Global.high_score)
