@@ -2,21 +2,37 @@
 ### Play it [here](https://madavidcoder.github.io/Frogger)!
 An endless runner remix of the classic arcade game Frogger. How far can you guide the frog safely over roads and rivers?
 
-## Demo 
-
-https://github.com/user-attachments/assets/1840aa63-dbfc-4171-b2c2-5be4a5f32d33
-
-
-## Play
+## Play 🎮
 Head to [https://madavidcoder.github.io/Frogger](https://madavidcoder.github.io/Frogger) to play.
 
-Use WASD or Arrow Keys to control the frog. Cross the roads and rivers, but don't get hit by cars or fall in the water. Challenge yourself to see how far you can go!
+Use WASD or Arrow Keys to control your character. Cross the roads and rivers, but don't get hit by cars or fall in the water. Keep moving, or the bottom of the screen will catch up to you.
 
-## License
-Infinite Frogger is licensed under the [MIT License](https://github.com/MadAvidCoder/Frogger/blob/main/LICENSE).
+Earn coins for your scores, and spend them on new playable characters. Save your progress to an account and challenge yourself to see how far you can go! Can you top the global leaderboard?
 
-## Acknowledgements
-- ["Pixel Vehicles - Top Down Game Assets - 16x16 - 32x32 Pixel Art - Free"](https://minzinn.itch.io/pixelvehicles) by [MinnZinn](https://minzinn.itch.io/) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+## Features ☑️
+- **Infinite Terrain Generation** provides a unique challenge on each gameplay with different types and sizes of obstacles.
+- **Online Account System** stores user login credentials, high score, characters and coins betweeen sessions.
+- **Multiple Earnable Characters** offer users goals to work towards for customization.
+- **Global Leaderboard** tracks the highest users' scores.
+- **Retro-Inspired Graphics** immerse the user in an arcade style pixel art game, reminiscent of the original Frogger.
+
+## Tech Stack 🛠️
+- **Frontend:** [Github Pages](https://pages.github.com/)
+- **Game:** [Godot Engine](https://godotengine.org/)
+- **Backend:** [Nest](https://hackclub.app/) Server
+- **Backend API:** [Flask](https://flask.palletsprojects.com/en/stable/) (Python)
+- **Backend Database:** [PostgreSQL](https://www.postgresql.org/)
+
+## License ⚖️
+Infinite Frogger is licensed under the [MIT License](https://github.com/MadAvidCoder/Frogger/blob/main/LICENSE). You are free to use, copy, modify and/or publish this project for commercial or non-commercial purposes. Attribution is appreciated, but not required.
+
+## Acknowledgements 🏅️
+- [Pixel Vehicles - Top Down Game Assets - 16x16 - 32x32 Pixel Art - Free](https://minzinn.itch.io/pixelvehicles) by [MinnZinn](https://minzinn.itch.io/) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- [Ajax Loader Metal](https://commons.wikimedia.org/w/index.php?curid=66593740) by Krishprakash24gmail is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- [Bunny Rabbit Sprite](https://opengameart.org/content/bunny-rabbit-lpc-style-for-pixelfarm) is designed [Stephen Challener (Redshrike)](https://opengameart.org/users/redshrike), commissioned by Tebruno99 and hosted by [OpenGameArt.org](https://opengameart.org)
+- Frog Sprite from [Deviantart.com](https://www.deviantart.com/kheftel/art/Frog-finished-549424306)
+- Squirrel Sprite from [saralara93.blogspot.com](https://saralara93.blogspot.com/)
 - Water from [Pixilart.com](https://www.pixilart.com/art/world-of-noel-water-animation-ee7d4460451792a) / Tiled from original
-- Frog from [Deviantart.com](https://www.deviantart.com/kheftel/art/Frog-finished-549424306)
+- Titles created using the [Blox Font](https://fontmeme.com/fonts/blox-font/) by [Ænigma](https://fontmeme.com/fonts/aenigma-listing/) via [Font Meme](https://fontmeme.com/)
+- [Godot 4 HTTP Manager](https://github.com/D2klaas/Godot-4-HTTPManager?tab=readme-ov-file) by [D2Klaas](https://github.com/D2klaas) is licensed under the [MIT License](https://github.com/D2klaas/Godot-4-HTTPManager/blob/main/LICENSE)
 - Game made with the [Godot Engine](https://godotengine.org/)
