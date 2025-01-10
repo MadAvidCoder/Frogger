@@ -1,3 +1,5 @@
-/project/.godot/
-/project/addons/
+/frontend/project/.godot/
+/frontend/project/addons/
+/backend/project/.godot/
+/backend/project/addons/
 /.idea/
