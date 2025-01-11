@@ -4,9 +4,6 @@ func _ready() -> void:
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(45381)
 	multiplayer.multiplayer_peer = peer
-	var file = FileAccess.open("user://frogger_users.dat", FileAccess.READ_WRITE)
-	if file.get_as_text() == "":
-		file.store_string(JSON.stringify({}))
 
 func read_file():
 	var file = FileAccess.open("user://frogger_users.dat", FileAccess.READ)
