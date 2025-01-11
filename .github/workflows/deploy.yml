@@ -31,7 +31,7 @@ jobs:
         run: mkdir -v -p frontend/build/web
 
       - name: Build
-        run: godot -v --export-debug --headless "Web" ../frontend/build/web/index.html frontend/project/project.godot
+        run: godot -v --export-debug --headless "Web" frontend/build/web/index.html frontend/project/project.godot
 
       - name: Add coi-service-worker
         run: |
@@ -69,7 +69,7 @@ jobs:
         run: mkdir -v -p backend/build/linux
       
       - name: Build
-        run: godot -v --export-debug --headless "Linux" ../backend/build/linux/frogger_backend.x86_64 backend/project/project.godot
+        run: godot -v --export-debug --headless "Linux" backend/build/linux/frogger_backend.x86_64 backend/project/project.godot
 
       - name: Upload
         uses: actions/upload-artifact@v4
