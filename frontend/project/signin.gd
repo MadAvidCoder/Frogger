@@ -1,6 +1,7 @@
 extends Control
 
 signal authenticated
+var main
 
 func _ready() -> void:
 	$SignIn.show()
@@ -9,6 +10,7 @@ func _ready() -> void:
 	$CreateAccount.hide()
 	$HasAccount.hide()
 	$CreateAccountButton.hide()
+	main = $".."
 
 func _on_no_account_button_pressed() -> void:
 	if not $"../Loading".visible:
@@ -40,8 +42,12 @@ func _on_sign_in() -> void:
 		$Password.editable = false
 		$"../Loading".show()
 		$"../Loading/Circle".play()
-		if $Username.text in await Global.get_all_users():
-			if $Password.text == await Global.get_user_info($Username.text,"password"):
+		main.get_all_users.rpc(Global.id)
+		var all_users = await main.responded
+		if $Username.text in all_users:
+			main.get_user_info.rpc($Username.text,"password",Global.id)
+			var pwd = await main.responded
+			if $Password.text == pwd:
 				Global.user = $Username.text
 				authenticated.emit()
 			else:
@@ -66,9 +72,11 @@ func _on_create_account() -> void:
 		$"../Loading".show()
 		$"../Loading/Circle".play()
 		if $Username.text != "":
-			if not $Username.text in await Global.get_all_users():
+			main.get_all_users.rpc(Global.id)
+			var all_users = await main.responded
+			if not $Username.text in all_users:
 				if $Password.text != "":
-					await Global.new_user($Username.text, $Password.text)
+					main.new_user.rpc($Username.text, $Password.text)
 					Global.user = $Username.text
 					authenticated.emit()
 				else:

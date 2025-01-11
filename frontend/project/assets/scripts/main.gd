@@ -8,6 +8,9 @@ var begun: bool = false
 var needs_grass: bool = false
 var restart = false
 var waiting = false
+var peer
+
+signal responded(response)
 
 @onready var grass = preload("res://grass.tscn")
 @onready var river = preload("res://river.tscn")
@@ -16,7 +19,46 @@ var waiting = false
 @onready var short_log = preload("res://short_log.tscn")
 @onready var long_log = preload("res://long_log.tscn")
 
+@rpc("any_peer", "call_remote", "unreliable")
+func new_user(_username, _password):
+	pass
+
+@rpc("any_peer", "call_remote", "unreliable")
+func edit_user(_username, _column, _value):
+	pass
+
+@rpc("any_peer", "call_remote", "unreliable")
+func get_all_users(_id):
+	pass
+
+@rpc("authority", "call_local", "unreliable")
+func receive_all_users(users, target):
+	if target == Global.id:
+		responded.emit(users)
+
+@rpc("any_peer", "call_remote", "unreliable")
+func get_leaderboard(_id):
+	pass
+
+@rpc("authority", "call_local", "unreliable")
+func receive_leaderboard(board, target):
+	if target == Global.id:
+		responded.emit(board)
+
+@rpc("any_peer", "call_remote", "unreliable")
+func get_user_info(_username, _column, _id):
+	pass
+
+@rpc("authority", "call_local", "unreliable")
+func receive_user_info(info, target):
+	if target == Global.id:
+		responded.emit(info)
+
 func _ready() -> void:
+	peer = ENetMultiplayerPeer.new()
+	peer.create_client("froggerapi.madavidcoder.hackclub.app", 80)
+	multiplayer.multiplayer_peer = peer
+	await multiplayer.peer_connected
 	$End.hide()
 	$Start.show()
 	$Start/Arrow_Left.hide()
@@ -140,13 +182,11 @@ func _start_game() -> void:
 					if Global.skin == 1:
 						Global.coins -= 500
 						Global.skins.append("rabbit")
-						await Global.edit_user(Global.user, "coins", Global.coins)
-						await Global.edit_user(Global.user, "skins", ",".join(Global.skins))
 					elif Global.skin == 2:
 						Global.coins -= 1000
 						Global.skins.append("squirrel")
-						await Global.edit_user(Global.user, "coins", Global.coins)
-						await Global.edit_user(Global.user, "skins", ",".join(Global.skins))
+					edit_user.rpc(Global.user,"coins", Global.coins)
+					edit_user.rpc(Global.user,"skins", Global.skins)
 					$Start/Button.disabled = false
 					$Start/Coins.text = str(Global.coins) + " Coins"
 					$Start/Button.text = "Play Game"
@@ -161,10 +201,10 @@ func _on_timer_timeout() -> void:
 	scroll = false
 	if int($Score.text) > int($High_Score.text):
 		$High_Score.text = $Score.text
-		await Global.edit_user(Global.user, "high_score", $High_Score.text)
+		edit_user.rpc(Global.user, "high_score", int($High_Score.text))
 		Global.high_score = int($High_Score.text)
 	Global.coins += int($Score.text)
-	await Global.edit_user(Global.user, "coins", Global.coins)
+	edit_user.rpc(Global.user,"coins", Global.coins)
 	restart = true
 	if waiting: _restart_game()
 
@@ -256,14 +296,12 @@ func _on_signin_authenticated() -> void:
 	$Start/Arrow_Left.show()
 	$Start/Arrow_Right.show()
 	$Start/Button.text = "Play Game"
-	Global.skins = await Global.get_user_info(Global.user, "skins")
-	if Global.skins != "":
-		Global.skins = Global.skins.split(",")
-	else:
-		Global.skins = []
-	var resp = await Global.get_user_info(Global.user)
-	Global.coins = int(resp[Global.columns.find("coins")])
-	Global.high_score = int(resp[Global.columns.find("high_score")])
+	get_user_info.rpc(Global.user, "skins", Global.id)
+	Global.skins = await responded
+	get_user_info.rpc(Global.user, "coins", Global.id)
+	Global.coins = await responded
+	get_user_info.rpc(Global.user, "high_score", Global.id)
+	Global.high_score = await responded
 	$Start/Coins.text = str(Global.coins) + " Coins"
 	$Start/Username.text = Global.user
 	$High_Score.text = str(Global.high_score)
@@ -288,7 +326,8 @@ func _show_leaderboard() -> void:
 	$Loading/Circle.play()
 	$Start.hide()
 	$Leaderboard.show()
-	var leaders = await Global.get_leaderboard()
+	get_leaderboard.rpc(Global.id)
+	var leaders = await responded
 	$Leaderboard/Row1/Username.text = leaders[0][0]
 	$Leaderboard/Row1/HighScore.text = leaders[0][1]
 	$Leaderboard/Row2/Username.text = leaders[1][0]
@@ -341,7 +380,7 @@ func _get_free() -> void:
 	$Loading/Circle.play()
 	Global.coins += 1500
 	$Start/Coins.text = str(Global.coins) + " Coins"
-	await Global.edit_user(Global.user, "coins", Global.coins)
+	edit_user.rpc(Global.user, "coins", Global.coins)
 	$Loading.hide()
 	$Loading/Circle.stop()
 	$Start/Label.hide()
