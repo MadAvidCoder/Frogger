@@ -55,8 +55,8 @@ func receive_user_info(info, target):
 		responded.emit(info)
 
 func _ready() -> void:
-	peer = ENetMultiplayerPeer.new()
-	peer.create_client("froggerapi.madavidcoder.hackclub.app", 45381)
+	peer = WebSocketMultiplayerPeer.new()
+	peer.create_client("froggerapi.madavidcoder.hackclub.app:45381")
 	multiplayer.multiplayer_peer = peer
 	await multiplayer.peer_connected
 	$End.hide()

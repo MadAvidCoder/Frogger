@@ -1,7 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	var peer = ENetMultiplayerPeer.new()
+	var peer = WebSocketMultiplayerPeer.new()
 	peer.create_server(45381)
 	multiplayer.multiplayer_peer = peer
 
