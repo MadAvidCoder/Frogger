@@ -47,7 +47,8 @@ func _on_sign_in() -> void:
 		if $Username.text in all_users:
 			main.get_user_info.rpc($Username.text,"password",Global.id)
 			var pwd = await main.responded
-			if $Password.text == pwd:
+			pwd = pwd.split(";")
+			if ($Password.text+pwd[0]).sha256_text() == pwd[1]:
 				Global.user = $Username.text
 				authenticated.emit()
 			else:
@@ -76,7 +77,10 @@ func _on_create_account() -> void:
 			var all_users = await main.responded
 			if not $Username.text in all_users:
 				if $Password.text != "":
-					main.new_user.rpc($Username.text, $Password.text)
+					var salt = get_salt()
+					var hashed = ($Password.text+salt).sha256_text()
+					var entry = salt+';'+hashed
+					main.new_user.rpc($Username.text, entry)
 					Global.user = $Username.text
 					authenticated.emit()
 				else:
@@ -118,3 +122,6 @@ func _password_validate_text(new_text: String) -> void:
 	if result:
 		$Password.text = regex.sub($Password.text, "", true)
 		$Password.caret_column = cached_caret_pos - 1
+
+func get_salt() -> String:
+	return str(Crypto.new().generate_random_bytes(8).to_int64_array()[0]).sha256_text()

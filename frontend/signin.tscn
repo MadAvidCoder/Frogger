@@ -115,9 +115,9 @@ text = "Sign In!"
 [node name="UsernameText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 379.5
-offset_top = 262.0
+offset_top = 268.0
 offset_right = 588.5
-offset_bottom = 295.0
+offset_bottom = 301.0
 theme_override_fonts/font = ExtResource("4_k4o3v")
 theme_override_font_sizes/font_size = 32
 text = "Username:"
@@ -125,9 +125,9 @@ text = "Username:"
 [node name="Username" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 379.0
-offset_top = 304.0
+offset_top = 310.0
 offset_right = 766.0
-offset_bottom = 343.0
+offset_bottom = 349.0
 theme_override_font_sizes/font_size = 22
 max_length = 16
 drag_and_drop_selection_enabled = false
@@ -136,9 +136,9 @@ caret_blink = true
 [node name="PasswordText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 379.5
-offset_top = 394.0
+offset_top = 415.0
 offset_right = 588.5
-offset_bottom = 427.0
+offset_bottom = 448.0
 theme_override_fonts/font = ExtResource("4_k4o3v")
 theme_override_font_sizes/font_size = 32
 text = "Password:"
@@ -146,25 +146,15 @@ text = "Password:"
 [node name="Password" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 379.0
-offset_top = 434.0
+offset_top = 455.0
 offset_right = 766.0
-offset_bottom = 473.0
+offset_bottom = 494.0
 theme_override_font_sizes/font_size = 22
 max_length = 50
 virtual_keyboard_type = 6
 drag_and_drop_selection_enabled = false
 caret_blink = true
 secret = true
-
-[node name="PasswordDisclaimer" type="Label" parent="."]
-layout_mode = 0
-offset_left = 380.0
-offset_top = 479.0
-offset_right = 769.0
-offset_bottom = 516.0
-theme_override_font_sizes/font_size = 12
-text = "DISCLAIMER: Username and password will be stored unencrypted. Use of a unique password is strongly recommended."
-autowrap_mode = 3
 
 [node name="SignInButton" type="Button" parent="."]
 layout_mode = 1
@@ -174,9 +164,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -75.0
-offset_top = -85.0
+offset_top = -89.0
 offset_right = 75.0
-offset_bottom = -48.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_k4o3v")
