@@ -60,7 +60,6 @@ func _ready() -> void:
 	cert.load("res://fullchain.crt")
 	peer.create_client("wss://froggerapi.madavidcoder.hackclub.app:45381",TLSOptions.client(cert))
 	multiplayer.multiplayer_peer = peer
-	await multiplayer.peer_connected
 	$End.hide()
 	$Start.show()
 	$Start/Arrow_Left.hide()
