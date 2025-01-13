@@ -10,6 +10,7 @@ Use WASD or Arrow Keys to control your character. Cross the roads and rivers, bu
 Earn coins for your scores, and spend them on new playable characters. Save your progress to an account and challenge yourself to see how far you can go! Can you top the global leaderboard?
 
 ## Features ☑️
+- **Password Salting and Hashing** protects user data from malicious access.
 - **Infinite Terrain Generation** provides a unique challenge on each gameplay with different types and sizes of obstacles.
 - **Online Account System** stores user login credentials, high score, characters and coins betweeen sessions.
 - **Multiple Earnable Characters** offer users goals to work towards for customization.
