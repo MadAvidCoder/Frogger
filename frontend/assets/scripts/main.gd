@@ -57,7 +57,7 @@ func receive_user_info(info, target):
 func _ready() -> void:
 	peer = WebSocketMultiplayerPeer.new()
 	var cert = X509Certificate.new()
-	cert.load("res://fullchain.cer")
+	cert.load("res://fullchain.crt")
 	peer.create_client("froggerapi.madavidcoder.hackclub.app:45381",TLSOptions.client(cert))
 	multiplayer.multiplayer_peer = peer
 	await multiplayer.peer_connected
