@@ -4,3 +4,4 @@
 /backend/addons/
 /.idea/
 *.key
+/ssl/
