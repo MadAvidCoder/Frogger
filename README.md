@@ -19,9 +19,10 @@ Earn coins for your scores, and spend them on new playable characters. Save your
 ## Tech Stack 🛠️
 - **Frontend:** [Github Pages](https://pages.github.com/)
 - **Game:** [Godot Engine](https://godotengine.org/)
+- **Networking Interface:** [WebSocket](https://websocket.org/)
 - **Backend:** [Nest](https://hackclub.app/) Server
-- **Backend API:** [Flask](https://flask.palletsprojects.com/en/stable/) (Python)
-- **Backend Database:** [PostgreSQL](https://www.postgresql.org/)
+- **Backend Structure:** [Godot Engine](https://godotengine.org/)
+- **Backend Database:** [JSON](https://www.json.org/json-en.html/)
 
 ## License ⚖️
 Infinite Frogger is licensed under the [MIT License](https://github.com/MadAvidCoder/Frogger/blob/main/LICENSE). You are free to use, copy, modify and/or publish this project for commercial or non-commercial purposes. Attribution is appreciated, but not required.
@@ -34,5 +35,4 @@ Infinite Frogger is licensed under the [MIT License](https://github.com/MadAvidC
 - Squirrel Sprite from [saralara93.blogspot.com](https://saralara93.blogspot.com/)
 - Water from [Pixilart.com](https://www.pixilart.com/art/world-of-noel-water-animation-ee7d4460451792a) / Tiled from original
 - Titles created using the [Blox Font](https://fontmeme.com/fonts/blox-font/) by [Ænigma](https://fontmeme.com/fonts/aenigma-listing/) via [Font Meme](https://fontmeme.com/)
-- [Godot 4 HTTP Manager](https://github.com/D2klaas/Godot-4-HTTPManager?tab=readme-ov-file) by [D2Klaas](https://github.com/D2klaas) is licensed under the [MIT License](https://github.com/D2klaas/Godot-4-HTTPManager/blob/main/LICENSE)
 - Game made with the [Godot Engine](https://godotengine.org/)

@@ -163,7 +163,7 @@ offset_top = 479.0
 offset_right = 769.0
 offset_bottom = 516.0
 theme_override_font_sizes/font_size = 12
-text = "DISCLAIMER: Username and password will be stored in an unsecured database. A unique password is strongly recommended."
+text = "DISCLAIMER: Username and password will be stored unencrypted. Use of a unique password is strongly recommended."
 autowrap_mode = 3
 
 [node name="SignInButton" type="Button" parent="."]
