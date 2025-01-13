@@ -824,7 +824,6 @@ offset_bottom = 824.0
 color = Color(0, 0, 0, 1)
 
 [node name="Frog" type="AnimatedSprite2D" parent="." groups=["Frog", "Player"]]
-visible = false
 z_index = 1
 texture_filter = 1
 position = Vector2(576, 584.7)
@@ -860,12 +859,13 @@ scale = Vector2(0.25, 0.25)
 shape = SubResource("RectangleShape2D_pau84")
 
 [node name="Squirrel" type="AnimatedSprite2D" parent="." groups=["Player", "Squirrel"]]
+visible = false
 z_index = 1
 texture_filter = 1
 position = Vector2(576, 584.7)
 scale = Vector2(2.04, 2.04)
 sprite_frames = SubResource("SpriteFrames_8voh4")
-animation = &"dead"
+animation = &"forward_stationary"
 autoplay = "forward_stationary"
 offset = Vector2(0, -5)
 script = ExtResource("54_e5frh")
@@ -1544,9 +1544,6 @@ theme_override_fonts/font = ExtResource("37_ujkdl")
 theme_override_font_sizes/font_size = 32
 text = "Play Again?"
 
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-
 [node name="Score" type="Label" parent="."]
 top_level = true
 z_index = 8
@@ -1610,6 +1607,9 @@ offset_bottom = 460.0
 theme_override_fonts/font = ExtResource("37_ujkdl")
 theme_override_font_sizes/font_size = 38
 text = "Loading"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="started" from="." to="Frog" method="_on_started"]
 [connection signal="started" from="." to="Rabbit" method="_on_started"]

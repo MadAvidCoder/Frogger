@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bundsotadavd1"]
+[gd_scene load_steps=9 format=3 uid="uid://bundsotadavd1"]
 
 [ext_resource type="Texture2D" uid="uid://cvdyr61e0r4tk" path="res://assets/backgrounds/grass.png" id="1_44n2o"]
 [ext_resource type="Script" path="res://assets/scripts/grass.gd" id="2_2hgqf"]
+[ext_resource type="Texture2D" uid="uid://ch8lpui4r2qsb" path="res://assets/sprites/acorn.png" id="3_kxua2"]
+[ext_resource type="Texture2D" uid="uid://dxqy0e73jxuwg" path="res://assets/sprites/butterfly.png" id="4_jmuwg"]
+[ext_resource type="Texture2D" uid="uid://b7rxn1ibntdps" path="res://assets/sprites/carrot.png" id="5_s2fxq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvwfc"]
+size = Vector2(509.247, 646.352)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n15b"]
+size = Vector2(458.182, 353.455)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e647l"]
+size = Vector2(489.589, 888.514)
 
 [node name="Grass" type="Sprite2D"]
 scale = Vector2(0.125, 0.125)
@@ -9,3 +21,41 @@ texture = ExtResource("1_44n2o")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 960)
 script = ExtResource("2_2hgqf")
+
+[node name="Acorn" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2408, -808)
+scale = Vector2(0.408446, 0.408446)
+texture = ExtResource("3_kxua2")
+
+[node name="AcornArea" type="Area2D" parent="Acorn"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Acorn/AcornArea"]
+position = Vector2(0.000213623, 9.79321)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vvwfc")
+
+[node name="Butterfly" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2408, -808)
+scale = Vector2(0.611111, 0.611111)
+texture = ExtResource("4_jmuwg")
+
+[node name="ButterflyArea" type="Area2D" parent="Butterfly"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Butterfly/ButterflyArea"]
+position = Vector2(0, 13.0909)
+shape = SubResource("RectangleShape2D_4n15b")
+
+[node name="Carrot" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-2408, -808)
+rotation = 0.785398
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("5_s2fxq")
+
+[node name="CarrotArea" type="Area2D" parent="Carrot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carrot/CarrotArea"]
+position = Vector2(-9.06653, 27.1993)
+shape = SubResource("RectangleShape2D_e647l")
