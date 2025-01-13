@@ -1,8 +1,12 @@
 extends Node
 
 func _ready() -> void:
-	var peer = ENetMultiplayerPeer.new()
-	peer.create_server(45381)
+	var peer = WebSocketMultiplayerPeer.new()
+	var cert = X509Certificate.new()
+	cert.load("res://fullchain.crt")
+	var key = CryptoKey.new()
+	key.load("res://privkey.key")
+	peer.create_server(45381, "*", TLSOptions.server(key,cert))
 	multiplayer.multiplayer_peer = peer
 
 func read_file():
