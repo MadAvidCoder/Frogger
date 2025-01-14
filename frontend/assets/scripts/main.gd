@@ -8,7 +8,8 @@ var begun: bool = false
 var needs_grass: bool = false
 var restart = false
 var waiting = false
-var peer
+var peer: WebSocketMultiplayerPeer
+var time_since: int = 0
 
 signal responded(response)
 

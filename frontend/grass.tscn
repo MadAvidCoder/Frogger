@@ -32,7 +32,6 @@ texture = ExtResource("3_kxua2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Acorn/AcornArea"]
 position = Vector2(0.000213623, 9.79321)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vvwfc")
 
 [node name="Butterfly" type="Sprite2D" parent="."]
