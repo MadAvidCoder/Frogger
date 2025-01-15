@@ -115,9 +115,9 @@ text = "Sign In!"
 [node name="UsernameText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 379.5
-offset_top = 268.0
+offset_top = 253.0
 offset_right = 588.5
-offset_bottom = 301.0
+offset_bottom = 286.0
 theme_override_fonts/font = ExtResource("4_k4o3v")
 theme_override_font_sizes/font_size = 32
 text = "Username:"
@@ -125,9 +125,9 @@ text = "Username:"
 [node name="Username" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 379.0
-offset_top = 310.0
+offset_top = 295.0
 offset_right = 766.0
-offset_bottom = 349.0
+offset_bottom = 334.0
 theme_override_font_sizes/font_size = 22
 max_length = 16
 drag_and_drop_selection_enabled = false
@@ -136,9 +136,9 @@ caret_blink = true
 [node name="PasswordText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 379.5
-offset_top = 415.0
+offset_top = 372.0
 offset_right = 588.5
-offset_bottom = 448.0
+offset_bottom = 405.0
 theme_override_fonts/font = ExtResource("4_k4o3v")
 theme_override_font_sizes/font_size = 32
 text = "Password:"
@@ -146,15 +146,63 @@ text = "Password:"
 [node name="Password" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 379.0
-offset_top = 455.0
+offset_top = 412.0
 offset_right = 766.0
-offset_bottom = 494.0
+offset_bottom = 451.0
 theme_override_font_sizes/font_size = 22
 max_length = 50
 virtual_keyboard_type = 6
 drag_and_drop_selection_enabled = false
 caret_blink = true
 secret = true
+
+[node name="Capital" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 380.0
+offset_top = 465.0
+offset_right = 640.0
+offset_bottom = 483.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 17
+text = "[X] Capital Letter"
+
+[node name="Number" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 380.0
+offset_top = 485.0
+offset_right = 640.0
+offset_bottom = 503.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 17
+text = "[X] Number"
+
+[node name="Special" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 380.0
+offset_top = 505.0
+offset_right = 640.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 17
+text = "[X] Special Character"
+
+[node name="8Chars" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 380.0
+offset_top = 525.0
+offset_right = 640.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_k4o3v")
+theme_override_font_sizes/font_size = 17
+text = "[X] 8+ Characters"
 
 [node name="SignInButton" type="Button" parent="."]
 layout_mode = 1
@@ -193,8 +241,8 @@ text = "Create Account"
 
 [node name="AlertDialog" type="AcceptDialog" parent="."]
 title = "Error"
-position = Vector2i(471, 277)
-size = Vector2i(210, 94)
+position = Vector2i(438, 277)
+size = Vector2i(277, 94)
 unresizable = true
 borderless = true
 popup_window = true
