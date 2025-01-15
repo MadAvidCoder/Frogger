@@ -3,5 +3,6 @@
 /backend/.godot/
 /backend/addons/
 /.idea/
-*.key
 /ssl/
+*.key
+*.tmp
