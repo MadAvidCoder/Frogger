@@ -5,7 +5,7 @@ An endless runner remix of the classic arcade game Frogger. How far can you guid
 ## Play 🎮
 Head to [https://madavidcoder.github.io/Frogger](https://madavidcoder.github.io/Frogger) to play.
 
-Use WASD or Arrow Keys to control your character. Cross the roads and rivers, but don't get hit by cars or fall in the water. Keep moving, or the bottom of the screen will catch up to you.
+Use WASD or Arrow Keys to control your character. Cross the roads and rivers, but don't get hit by cars or fall in the water. Watch out for rotten logs, which will break under your weight. Collect food to get a higher score and keep moving, or the bottom of the screen will catch up to you.
 
 Earn coins for your scores, and spend them on new playable characters. Save your progress to an account and challenge yourself to see how far you can go! Can you top the global leaderboard?
 
@@ -32,8 +32,11 @@ Infinite Frogger is licensed under the [MIT License](https://github.com/MadAvidC
 - [Pixel Vehicles - Top Down Game Assets - 16x16 - 32x32 Pixel Art - Free](https://minzinn.itch.io/pixelvehicles) by [MinnZinn](https://minzinn.itch.io/) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 - [Ajax Loader Metal](https://commons.wikimedia.org/w/index.php?curid=66593740) by Krishprakash24gmail is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 - [Bunny Rabbit Sprite](https://opengameart.org/content/bunny-rabbit-lpc-style-for-pixelfarm) is designed [Stephen Challener (Redshrike)](https://opengameart.org/users/redshrike), commissioned by Tebruno99 and hosted by [OpenGameArt.org](https://opengameart.org)
-- Frog Sprite from [Deviantart.com](https://www.deviantart.com/kheftel/art/Frog-finished-549424306)
+- Frog Sprite from [Deviant Art](https://www.deviantart.com/kheftel/art/Frog-finished-549424306)
 - Squirrel Sprite from [saralara93.blogspot.com](https://saralara93.blogspot.com/)
-- Water from [Pixilart.com](https://www.pixilart.com/art/world-of-noel-water-animation-ee7d4460451792a) / Tiled from original
+- Acorn from [Deviant Art](https://www.deviantart.com/pixeldonutofcanada91/art/Acorn-Pixel-941099860)
+- Carrot from [Mega Voxels](https://www.megavoxels.com/learn/how-to-make-a-pixel-art-carrot/)
+- Butterfly by [Vecteezy](https://www.vecteezy.com/vector-art/23685233-pixel-art-butterfly-butterfly-insect-pixelated-design-for-logo-web-mobile-app-badges-and-patches-video-game-sprite-8-bit-isolated-vector-illustration)
+- Water from [Pixilart](https://www.pixilart.com/art/world-of-noel-water-animation-ee7d4460451792a) / Tiled from original
 - Titles created using the [Blox Font](https://fontmeme.com/fonts/blox-font/) by [Ænigma](https://fontmeme.com/fonts/aenigma-listing/) via [Font Meme](https://fontmeme.com/)
 - Game made with the [Godot Engine](https://godotengine.org/)
