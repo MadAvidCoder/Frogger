@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dffc1ec3056du"]
+
+[ext_resource type="Texture2D" uid="uid://bgsciaum32p6x" path="res://assets/sprites/log/rotten.png" id="1_8abx0"]
+[ext_resource type="Script" path="res://rotten_log.gd" id="2_ljano"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4rw0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8abx0")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2k2o"]
+size = Vector2(2797, 903)
+
+[node name="Rotten" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_4rw0l")
+frame_progress = 0.0342924
+script = ExtResource("2_ljano")
+
+[node name="Rotten_Log_Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Rotten_Log_Area"]
+shape = SubResource("RectangleShape2D_k2k2o")
+
+[connection signal="area_entered" from="Rotten_Log_Area" to="." method="_on_rotten_log_area_area_entered"]

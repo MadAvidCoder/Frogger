@@ -60,8 +60,12 @@ func _process(delta: float) -> void:
 			if "Log" in str(touching):
 				for i in touching:
 					if "Log" in str(i) and animation != "dead":
-						position.x += i.get_parent().get_meta("velocity")*delta*0.05
-						
+						if i.get_parent().has_meta("gone"):
+							play("dead")
+							ended.emit()
+							dir = "dead"
+						else:
+							position.x += i.get_parent().get_meta("velocity")*delta*0.05
 			else:
 				if "stationary" in animation:
 					dir = "dead"

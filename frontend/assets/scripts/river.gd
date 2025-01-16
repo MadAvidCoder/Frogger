@@ -4,6 +4,7 @@ var pos
 var lanes
 @onready var short = preload("res://short_log.tscn")
 @onready var long = preload("res://long_log.tscn")
+@onready var rotten = preload("res://rotten_log.tscn")
 @onready var collision = $River_Area/Collision
 var logs = []
 var next = []
@@ -67,7 +68,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	for i in range(lanes):
 		if next[i] <= 0:
-			if randi_range(0,1):
+			var chosen = randf()
+			if chosen < 0.5:
 				var new = short.instantiate()
 				add_child(new)
 				if dir != i%2:
@@ -79,8 +81,20 @@ func _process(delta: float) -> void:
 					new.position = Vector2(-1000,pos[i])
 					next[i] = randf_range(1,2.5)+1900/vel[i]
 				logs[i].append(new)
-			else:
+			elif chosen < 0.9:
 				var new = long.instantiate()
+				add_child(new)
+				if dir != i%2:
+					new.set_meta("velocity",-vel[i])
+					new.position = Vector2(11500,pos[i])
+					next[i] = randf_range(1,2.5)+2800/vel[i]
+				else:
+					new.set_meta("velocity",vel[i])
+					new.position = Vector2(-1500,pos[i])
+					next[i] = randf_range(1,2.5)+2800/vel[i]
+				logs[i].append(new)
+			else:
+				var new = rotten.instantiate()
 				add_child(new)
 				if dir != i%2:
 					new.set_meta("velocity",-vel[i])
@@ -95,12 +109,12 @@ func _process(delta: float) -> void:
 		for item in logs[i]:
 			if dir != i%2:
 				item.position.x -= vel[i]*delta
-				if item.position.x+50 < -(item.texture.get_width()*item.scale.x)/2:
+				if item.position.x+50 < -1500:
 					item.queue_free()
 					logs[i].erase(item)
 			else:
 				item.position.x += vel[i]*delta
-				if item.position.x-50 > 10000 + (item.texture.get_width()*item.scale.x)/2:
+				if item.position.x-50 > 11500:
 					item.queue_free()
 					logs[i].erase(item)
 		next[i] -= delta
