@@ -3,10 +3,10 @@ extends Node
 func _ready() -> void:
 	var peer = WebSocketMultiplayerPeer.new()
 	var cert = X509Certificate.new()
-	cert.load("res://fullchain.crt")
+	cert.load("res://fullpath.crt")
 	var key = CryptoKey.new()
-	key.load("res://privkey.key")
-	peer.create_server(45381, "*", TLSOptions.server(key,cert))
+	key.load("res://private.key")
+	peer.create_server(41213, "*", TLSOptions.server(key,cert))
 	multiplayer.multiplayer_peer = peer
 
 func read_file():
